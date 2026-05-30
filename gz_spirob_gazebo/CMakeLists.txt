@@ -33,14 +33,14 @@ endif()
 # --------------------------------------------------------------------------- #
 # Build plugin.
 
-add_library(Tendon
+add_library(gz-sim-tendon-system
     SHARED
     src/tendon/Tendon.cc
 )
-target_include_directories(Tendon PRIVATE
+target_include_directories(gz-sim-tendon-system PRIVATE
   include
 )
-target_link_libraries(Tendon PRIVATE
+target_link_libraries(gz-sim-tendon-system PRIVATE
   gz-sim${GZ_SIM_VER}::gz-sim${GZ_SIM_VER}
 )
 
@@ -49,7 +49,7 @@ target_link_libraries(Tendon PRIVATE
 
 install(
   TARGETS
-  Tendon
+  gz-sim-tendon-system
   DESTINATION lib/${PROJECT_NAME}
 )
 
