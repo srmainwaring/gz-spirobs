@@ -70,10 +70,48 @@
       </link>
     </model>
 
-    <include>
-      <uri>model://spirob_arm</uri>
-      <pose degrees="true">0 0 0.1 0 -90 0</pose>
-    </include>
+    <model name="arm">
+      <include merge="true">
+        <uri>model://spirob_arm</uri>
+        <pose degrees="true">0 0 0.1 90 -90 0</pose>
+      </include>
+      <joint name="arm_world" type="fixed">
+        <parent>world</parent>
+        <child>base_link</child>
+      </joint>
+
+      <link name="ball_link">
+        <pose relative_to="ball_joint">0 0 0 0 0 0</pose>
+        <inertial auto="true" />
+        <collision name="collision">
+          <pose degrees="true">0 0 0 0 0 0</pose>
+          <density>10000</density>
+          <geometry>
+            <sphere>
+              <radius>0.02</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <pose degrees="true">0 0 0 0 0 0</pose>
+          <geometry>
+            <sphere>
+              <radius>0.02</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0</ambient>
+            <diffuse>0 1 0</diffuse>
+            <specular>0.1 0.1 0.1</specular>
+          </material>
+        </visual>
+      </link>
+      <joint name="ball_joint" type="fixed">
+        <pose relative_to="link24">0 0 0 0 0 0</pose>
+        <parent>link24</parent>
+        <child>ball_link</child>
+      </joint>
+    </model>
 
   </world>
 </sdf>
