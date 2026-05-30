@@ -2048,8 +2048,8 @@
           <upper>0.523598776</upper>
         </limit>
         <dynamics>
-          <damping>12.602789</damping>
-          <spring_stiffness>19.853787</spring_stiffness>
+          <damping>1.2602789</damping>
+          <spring_stiffness>1.9853787</spring_stiffness>
         </dynamics>
       </axis>
     </joint>
