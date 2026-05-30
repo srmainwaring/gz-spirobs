@@ -62,9 +62,8 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
-
       <visual name="s1_1">
-        <pose degrees="true" relative_to="link1">0.016795002 0.036394210 0 0 0 0</pose>
+        <pose>0.016795002 0.036394210 0 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.001000</radius>
@@ -77,7 +76,7 @@
         </material>
       </visual>
       <visual name="s1_2">
-        <pose degrees="true" relative_to="link1">0.042801474 0.034423562 0 0 0 0</pose>
+        <pose>0.042801474 0.034423562 0 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.001000</radius>
@@ -90,7 +89,7 @@
         </material>
       </visual>
       <visual name="s1_3">
-        <pose degrees="true" relative_to="link1">0.016795002 -0.036394210 0 0 0 0</pose>
+        <pose>0.016795002 -0.036394210 0 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.001000</radius>
@@ -103,7 +102,7 @@
         </material>
       </visual>
       <visual name="s1_4">
-        <pose degrees="true" relative_to="link1">0.042801474 -0.034423562 0 0 0 0</pose>
+        <pose>0.042801474 -0.034423562 0 0 0 0</pose>
         <geometry>
           <sphere>
             <radius>0.001000</radius>
@@ -115,7 +114,6 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
-
     </link>
     <link name="link2">
       <pose degrees="true" relative_to="joint12">0 0 0 0 0 0</pose>
@@ -141,6 +139,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_1">
+        <pose>0.015313251 0.033183304 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_2">
+        <pose>0.039025283 0.031386518 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_3">
+        <pose>0.015313251 -0.033183304 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_4">
+        <pose>0.039025283 -0.031386518 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -172,6 +222,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s3_1">
+        <pose>0.013962228 0.030255683 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s3_2">
+        <pose>0.035582249 0.028617420 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s3_3">
+        <pose>0.013962228 -0.030255683 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s3_4">
+        <pose>0.035582249 -0.028617420 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link4">
       <pose degrees="true" relative_to="joint34">0 0 0 0 0 0</pose>
@@ -197,6 +299,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s4_1">
+        <pose>0.012730400 0.027586354 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s4_2">
+        <pose>0.032442980 0.026092627 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s4_3">
+        <pose>0.012730400 -0.027586354 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s4_4">
+        <pose>0.032442980 -0.026092627 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -228,6 +382,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s5_1">
+        <pose>0.011607252 0.025152528 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s5_2">
+        <pose>0.029580674 0.023790586 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s5_3">
+        <pose>0.011607252 -0.025152528 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s5_4">
+        <pose>0.029580674 -0.023790586 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link6">
       <pose degrees="true" relative_to="joint56">0 0 0 0 0 0</pose>
@@ -253,6 +459,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s6_1">
+        <pose>0.010583193 0.022933428 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s6_2">
+        <pose>0.026970898 0.021691645 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s6_3">
+        <pose>0.010583193 -0.022933428 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s6_4">
+        <pose>0.026970898 -0.021691645 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -284,6 +542,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s7_1">
+        <pose>0.009649483 0.020910109 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s7_2">
+        <pose>0.024591371 0.019777884 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s7_3">
+        <pose>0.009649483 -0.020910109 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s7_4">
+        <pose>0.024591371 -0.019777884 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link8">
       <pose degrees="true" relative_to="joint78">0 0 0 0 0 0</pose>
@@ -309,6 +619,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s8_1">
+        <pose>0.008798151 0.019065300 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s8_2">
+        <pose>0.022421779 0.018032965 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s8_3">
+        <pose>0.008798151 -0.019065300 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s8_4">
+        <pose>0.022421779 -0.018032965 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -340,6 +702,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s9_1">
+        <pose>0.008021928 0.017383250 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s9_2">
+        <pose>0.020443602 0.016441994 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s9_3">
+        <pose>0.008021928 -0.017383250 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s9_4">
+        <pose>0.020443602 -0.016441994 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link10">
       <pose degrees="true" relative_to="joint910">0 0 0 0 0 0</pose>
@@ -365,6 +779,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s10_1">
+        <pose>0.007314187 0.015849600 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s10_2">
+        <pose>0.018639950 0.014991387 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s10_3">
+        <pose>0.007314187 -0.015849600 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s10_4">
+        <pose>0.018639950 -0.014991387 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -396,6 +862,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s11_1">
+        <pose>0.006668888 0.014451258 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s11_2">
+        <pose>0.016995427 0.013668761 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s11_3">
+        <pose>0.006668888 -0.014451258 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s11_4">
+        <pose>0.016995427 -0.013668761 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link12">
       <pose degrees="true" relative_to="joint1112">0 0 0 0 0 0</pose>
@@ -421,6 +939,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s12_1">
+        <pose>0.006080520 0.013176285 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s12_2">
+        <pose>0.015495993 0.012462825 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s12_3">
+        <pose>0.006080520 -0.013176285 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s12_4">
+        <pose>0.015495993 -0.012462825 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -452,6 +1022,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s13_1">
+        <pose>0.005544062 0.012013798 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s13_2">
+        <pose>0.014128848 0.011363283 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s13_3">
+        <pose>0.005544062 -0.012013798 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s13_4">
+        <pose>0.014128848 -0.011363283 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link14">
       <pose degrees="true" relative_to="joint1314">0 0 0 0 0 0</pose>
@@ -477,6 +1099,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s14_1">
+        <pose>0.005054933 0.010953872 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s14_2">
+        <pose>0.012882320 0.010360749 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s14_3">
+        <pose>0.005054933 -0.010953872 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s14_4">
+        <pose>0.012882320 -0.010360749 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -508,6 +1182,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s15_1">
+        <pose>0.004608958 0.009987459 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s15_2">
+        <pose>0.011745768 0.009446665 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s15_3">
+        <pose>0.004608958 -0.009987459 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s15_4">
+        <pose>0.011745768 -0.009446665 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link16">
       <pose degrees="true" relative_to="joint1516">0 0 0 0 0 0</pose>
@@ -533,6 +1259,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s16_1">
+        <pose>0.004202329 0.009106308 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s16_2">
+        <pose>0.010709489 0.008613226 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s16_3">
+        <pose>0.004202329 -0.009106308 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s16_4">
+        <pose>0.010709489 -0.008613226 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -564,6 +1342,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s17_1">
+        <pose>0.003831576 0.008302897 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s17_2">
+        <pose>0.009764637 0.007853318 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s17_3">
+        <pose>0.003831576 -0.008302897 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s17_4">
+        <pose>0.009764637 -0.007853318 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link18">
       <pose degrees="true" relative_to="joint1718">0 0 0 0 0 0</pose>
@@ -589,6 +1419,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s18_1">
+        <pose>0.003493532 0.007570368 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s18_2">
+        <pose>0.008903145 0.007160453 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s18_3">
+        <pose>0.003493532 -0.007570368 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s18_4">
+        <pose>0.008903145 -0.007160453 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -620,6 +1502,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s19_1">
+        <pose>0.003185313 0.006902467 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s19_2">
+        <pose>0.008117658 0.006528717 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s19_3">
+        <pose>0.003185313 -0.006902467 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s19_4">
+        <pose>0.008117658 -0.006528717 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link20">
       <pose degrees="true" relative_to="joint1920">0 0 0 0 0 0</pose>
@@ -645,6 +1579,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_1">
+        <pose>0.002904286 0.006293492 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_2">
+        <pose>0.007401472 0.005952716 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_3">
+        <pose>0.002904286 -0.006293492 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_4">
+        <pose>0.007401472 -0.005952716 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -676,6 +1662,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s21_1">
+        <pose>0.002648054 0.005738244 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s21_2">
+        <pose>0.006748472 0.005427533 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s21_3">
+        <pose>0.002648054 -0.005738244 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s21_4">
+        <pose>0.006748472 -0.005427533 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link22">
       <pose degrees="true" relative_to="joint2122">0 0 0 0 0 0</pose>
@@ -701,6 +1739,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s22_1">
+        <pose>0.002414427 0.005231983 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s22_2">
+        <pose>0.006153083 0.004948685 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s22_3">
+        <pose>0.002414427 -0.005231983 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s22_4">
+        <pose>0.006153083 -0.004948685 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -732,6 +1822,58 @@
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
+      <visual name="s23_1">
+        <pose>0.002201413 0.004770388 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s23_2">
+        <pose>0.005610223 0.004512084 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s23_3">
+        <pose>0.002201413 -0.004770388 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s23_4">
+        <pose>0.005610223 -0.004512084 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
     </link>
     <link name="link24">
       <pose degrees="true" relative_to="joint2324">0 0 0 0 0 0</pose>
@@ -757,6 +1899,58 @@
         <material>
           <ambient>0.5 0.5 0.5</ambient>
           <diffuse>0.5 0.5 0.5</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_1">
+        <pose>0.002007191 0.004349517 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s24_2">
+        <pose>0.005115257 0.004114002 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s24_3">
+        <pose>0.002007191 -0.004349517 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s24_4">
+        <pose>0.005115257 -0.004114002 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
