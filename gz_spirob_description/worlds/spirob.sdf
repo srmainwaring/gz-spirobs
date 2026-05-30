@@ -80,7 +80,7 @@
         <child>base_link</child>
       </joint>
 
-      <link name="ball_link">
+      <!--<link name="ball_link">
         <pose relative_to="ball_joint">0 0 0 0 0 0</pose>
         <inertial auto="true" />
         <collision name="collision">
@@ -110,7 +110,8 @@
         <pose relative_to="link24">0 0 0 0 0 0</pose>
         <parent>link24</parent>
         <child>ball_link</child>
-      </joint>
+      </joint>-->
+
     </model>
 
   </world>
