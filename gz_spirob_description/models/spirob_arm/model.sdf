@@ -2,6 +2,7 @@
 <sdf version="1.9">
   <model name="spirob_arm">
     <static>0</static>
+    <self_collide>1</self_collide>
     <link name="base_link">
       <pose degrees="true">0 0 0 0 0 0</pose>
       <inertial auto="true" />
