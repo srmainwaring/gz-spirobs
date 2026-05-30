@@ -2325,5 +2325,10 @@
         </dynamics>
       </axis>
     </joint>
+
+    <plugin filename="gz-sim-tendon-system"
+      name="gz::sim::systems::Tendon">
+    </plugin>
+
   </model>
 </sdf>
