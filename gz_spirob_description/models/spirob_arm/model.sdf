@@ -23,8 +23,8 @@
           </box>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -58,8 +58,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -138,8 +138,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -218,8 +218,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -298,8 +298,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -378,8 +378,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -458,8 +458,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -538,8 +538,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -618,8 +618,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -698,8 +698,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -778,8 +778,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -858,8 +858,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -938,8 +938,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1018,8 +1018,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1098,8 +1098,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1178,8 +1178,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1258,8 +1258,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1338,8 +1338,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1418,8 +1418,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1498,8 +1498,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1578,8 +1578,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1658,8 +1658,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1738,8 +1738,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1818,8 +1818,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -1898,8 +1898,8 @@
           </mesh>
         </geometry>
         <material>
-          <ambient>0.5 0.5 0.5</ambient>
-          <diffuse>0.5 0.5 0.5</diffuse>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
           <specular>0.1 0.1 0.1</specular>
         </material>
       </visual>
@@ -2326,14 +2326,14 @@
       </axis>
     </joint>
 
+    <!--
+    Tendon defined as a number of segments, not necessarily continuous
+    in definition, as some sections may run through links.
+    All segments assumed to be at the same tension.
+    Sites are specified in link frame coordinates.
+    -->
     <plugin filename="gz-sim-tendon-system"
       name="gz::sim::systems::Tendon">
-      <!--
-      Tendon defined as a number of segments, not necessarily continuous
-      in definition, as some sections may run through links.
-      All segments assumed to be at the same tension.
-      Sites are specified in link frame coordinates.
-      -->
       <tendon>
         <name>tendon1</name>
         <segment>
@@ -2480,12 +2480,6 @@
 
     <plugin filename="gz-sim-tendon-system"
       name="gz::sim::systems::Tendon">
-      <!--
-      Tendon defined as a number of segments, not necessarily continuous
-      in definition, as some sections may run through links.
-      All segments assumed to be at the same tension.
-      Sites are specified in link frame coordinates.
-      -->
       <tendon>
         <name>tendon2</name>
         <segment>
