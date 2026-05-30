@@ -70,7 +70,7 @@ class gz::sim::systems::TendonPrivate
 
   /// \brief Tendon name
   // @todo remove hardcode
-  public: std::string tendonName = "tendon1";
+  public: std::string tendonName;
 
   /// \brief Commanded force
   public: double tendonForceCmd;
@@ -116,6 +116,23 @@ void Tendon::Configure(const Entity &_entity,
   if (!sdfTendon)
   {
     gzerr << "Tendon plugin must contain a <tendon> element." << std::endl;
+    return;
+  }
+
+  auto sdfTendonName = sdfTendon->GetElement("name");
+  if (!sdfTendonName)
+  {
+    gzerr << "Tendon must contain a <name> element." << std::endl;
+    return;
+  }
+
+  if (!sdfTendonName->Get<std::string>().empty())
+  {
+    this->dataPtr->tendonName = sdfTendonName->Get<std::string>();
+  }
+  else
+  {
+    gzerr << "<name> provided but is empty." << std::endl;
     return;
   }
 
