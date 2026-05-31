@@ -863,6 +863,510 @@
         </material>
       </visual>
     </link>
+    <link name="link25">
+      <pose degrees="true" relative_to="joint2425">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000284753 0.000284753 0.000284753</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000284753 0.000284753 0.000284753</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link26">
+      <pose degrees="true" relative_to="joint2526">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000270232 0.000270232 0.000270232</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000270232 0.000270232 0.000270232</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link27">
+      <pose degrees="true" relative_to="joint2627">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000256452 0.000256452 0.000256452</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000256452 0.000256452 0.000256452</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link28">
+      <pose degrees="true" relative_to="joint2728">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000243375 0.000243375 0.000243375</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000243375 0.000243375 0.000243375</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link29">
+      <pose degrees="true" relative_to="joint2829">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000230965 0.000230965 0.000230965</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000230965 0.000230965 0.000230965</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link30">
+      <pose degrees="true" relative_to="joint2930">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000219187 0.000219187 0.000219187</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000219187 0.000219187 0.000219187</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link31">
+      <pose degrees="true" relative_to="joint3031">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000208010 0.000208010 0.000208010</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000208010 0.000208010 0.000208010</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link32">
+      <pose degrees="true" relative_to="joint3132">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000197403 0.000197403 0.000197403</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000197403 0.000197403 0.000197403</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link33">
+      <pose degrees="true" relative_to="joint3233">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000187337 0.000187337 0.000187337</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000187337 0.000187337 0.000187337</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link34">
+      <pose degrees="true" relative_to="joint3334">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000177784 0.000177784 0.000177784</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000177784 0.000177784 0.000177784</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link35">
+      <pose degrees="true" relative_to="joint3435">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000168718 0.000168718 0.000168718</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000168718 0.000168718 0.000168718</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link36">
+      <pose degrees="true" relative_to="joint3536">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000160115 0.000160115 0.000160115</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000160115 0.000160115 0.000160115</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link37">
+      <pose degrees="true" relative_to="joint3637">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000151950 0.000151950 0.000151950</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000151950 0.000151950 0.000151950</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link38">
+      <pose degrees="true" relative_to="joint3738">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000144202 0.000144202 0.000144202</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000144202 0.000144202 0.000144202</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link39">
+      <pose degrees="true" relative_to="joint3839">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000136849 0.000136849 0.000136849</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000136849 0.000136849 0.000136849</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link40">
+      <pose degrees="true" relative_to="joint3940">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000129870 0.000129870 0.000129870</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000129870 0.000129870 0.000129870</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link41">
+      <pose degrees="true" relative_to="joint4041">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000123248 0.000123248 0.000123248</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000123248 0.000123248 0.000123248</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link42">
+      <pose degrees="true" relative_to="joint4142">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000116963 0.000116963 0.000116963</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000116963 0.000116963 0.000116963</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
 
     <joint name="joint12" type="ball">
       <pose degrees="true" relative_to="link1">0 0 0.026276293 0 0 0</pose>
@@ -1229,6 +1733,294 @@
         <dynamics>
           <damping>0.632352</damping>
           <spring_stiffness>0.499836</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2425" type="ball">
+      <pose degrees="true" relative_to="link24">0 0 0.007884286 0 0 0</pose>
+      <parent>link24</parent>
+      <child>link25</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.600106</damping>
+          <spring_stiffness>0.450160</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2526" type="ball">
+      <pose degrees="true" relative_to="link25">0 0 0.007482244 0 0 0</pose>
+      <parent>link25</parent>
+      <child>link26</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.56950</damping>
+          <spring_stiffness>0.405420</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2627" type="ball">
+      <pose degrees="true" relative_to="link26">0 0 0.007100703 0 0 0</pose>
+      <parent>link26</parent>
+      <child>link27</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.540465</damping>
+          <spring_stiffness>0.365127</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2728" type="ball">
+      <pose degrees="true" relative_to="link27">0 0 0.006738618 0 0 0</pose>
+      <parent>link27</parent>
+      <child>link28</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.512905</damping>
+          <spring_stiffness>0.328839</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2829" type="ball">
+      <pose degrees="true" relative_to="link28">0 0 0.006394997 0 0 0</pose>
+      <parent>link28</parent>
+      <child>link29</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.486750</damping>
+          <spring_stiffness>0.296157</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2930" type="ball">
+      <pose degrees="true" relative_to="link29">0 0 0.006068898 0 0 0</pose>
+      <parent>link29</parent>
+      <child>link30</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.461930</damping>
+          <spring_stiffness>0.266724</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3031" type="ball">
+      <pose degrees="true" relative_to="link30">0 0 0.005759427 0 0 0</pose>
+      <parent>link30</parent>
+      <child>link31</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.438374</damping>
+          <spring_stiffness>0.240215</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3132" type="ball">
+      <pose degrees="true" relative_to="link31">0 0 0.005465738 0 0 0</pose>
+      <parent>link31</parent>
+      <child>link32</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.416020</damping>
+          <spring_stiffness>0.216341</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3233" type="ball">
+      <pose degrees="true" relative_to="link32">0 0 0.005187024 0 0 0</pose>
+      <parent>link32</parent>
+      <child>link33</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.394806</damping>
+          <spring_stiffness>0.194840</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3334" type="ball">
+      <pose degrees="true" relative_to="link33">0 0 0.004922523 0 0 0</pose>
+      <parent>link33</parent>
+      <child>link34</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.374674</damping>
+          <spring_stiffness>0.175476</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3435" type="ball">
+      <pose degrees="true" relative_to="link34">0 0 0.004671510 0 0 0</pose>
+      <parent>link34</parent>
+      <child>link35</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.355568</damping>
+          <spring_stiffness>0.158036</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3536" type="ball">
+      <pose degrees="true" relative_to="link35">0 0 0.004433296 0 0 0</pose>
+      <parent>link35</parent>
+      <child>link36</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.337437</damping>
+          <spring_stiffness>0.142330</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3637" type="ball">
+      <pose degrees="true" relative_to="link36">0 0 0.004207230 0 0 0</pose>
+      <parent>link36</parent>
+      <child>link37</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.320230</damping>
+          <spring_stiffness>0.128184</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3738" type="ball">
+      <pose degrees="true" relative_to="link37">0 0 0.003992691 0 0 0</pose>
+      <parent>link37</parent>
+      <child>link38</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.303901</damping>
+          <spring_stiffness>0.115445</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3839" type="ball">
+      <pose degrees="true" relative_to="link38">0 0 0.003789093 0 0 0</pose>
+      <parent>link38</parent>
+      <child>link39</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.288404</damping>
+          <spring_stiffness>0.103971</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint3940" type="ball">
+      <pose degrees="true" relative_to="link39">0 0 0.003595876 0 0 0</pose>
+      <parent>link39</parent>
+      <child>link40</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.273697</damping>
+          <spring_stiffness>0.093638</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint4041" type="ball">
+      <pose degrees="true" relative_to="link40">0 0 0.003412512 0 0 0</pose>
+      <parent>link40</parent>
+      <child>link41</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.259741</damping>
+          <spring_stiffness>0.084332</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint4142" type="ball">
+      <pose degrees="true" relative_to="link41">0 0 0.003238498 0 0 0</pose>
+      <parent>link41</parent>
+      <child>link42</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.246496</damping>
+          <spring_stiffness>0.075950</spring_stiffness>
         </dynamics>
       </axis>
     </joint>
