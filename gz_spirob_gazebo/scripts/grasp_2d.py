@@ -1,5 +1,5 @@
 """
-Grasping controller for 2D SpiRob
+Simple grasping script for 2D SpiRob
 """
 
 import time
@@ -8,7 +8,6 @@ from gz.msgs.double_pb2 import Double
 from gz.msgs.stringmsg_pb2 import StringMsg
 from gz.msgs.vector3d_pb2 import Vector3d
 from gz.transport import Node
-
 
 def main():
     model_name = "arm"
