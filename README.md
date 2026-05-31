@@ -29,7 +29,9 @@ cd gz-spirob/gz_spirob_gazebo/scripts
 python grasp_2d.py
 ```
 
-https://github.com/user-attachments/assets/a2c3cb95-537e-4067-b2c0-16f17afff52e
+_Figure: grasping a cylinder using `grasp_2d.py`_
+
+![spirob-grasp](doc/images/03-gz-spirob-grasp.gif)
 
 ## References
 
