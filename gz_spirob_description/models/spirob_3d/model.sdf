@@ -1233,13 +1233,6 @@
       </axis>
     </joint>
 
-
-    <!--
-    Tendon defined as a number of segments, not necessarily continuous
-    in definition, as some sections may run through links.
-    All segments assumed to be at the same tension.
-    Sites are specified in link frame coordinates.
-    -->
     <plugin filename="gz-sim-tendon-system"
       name="gz::sim::systems::Tendon">
       <tendon>
@@ -1313,7 +1306,7 @@
         <segment>
           <link1>link12</link1>
           <link2>link13</link2>
-          <site1>0.000000000 0.021168647 0.007054104</site1> <!-- s12_2 -->
+          <site1>0.000000000 0.020519384 0.015287197</site1> <!-- s12_2 -->
           <site2>0.000000000 0.020089198 0.006694395</site2> <!-- s13_1 -->
         </segment>
         <segment>
@@ -1382,7 +1375,296 @@
           <site1>0.000000000 0.011537951 0.008595918</site1> <!-- s23_2 -->
           <site2>0.000000000 0.011296060 0.003764227</site2> <!-- s24_1 -->
         </segment>
+      </tendon>
+    </plugin>
 
+    <plugin filename="gz-sim-tendon-system"
+      name="gz::sim::systems::Tendon">
+      <tendon>
+        <name>tendon2</name>
+        <segment>
+          <link1>link1</link1>
+          <link2>link2</link2>
+          <site1>-0.031603163 -0.018246095 0.027187138</site1> <!-- s1_4 -->
+          <site2>-0.030940608 -0.017863568 0.011905482</site2> <!-- s2_3 -->
+        </segment>
+        <segment>
+          <link1>link2</link1>
+          <link2>link3</link2>
+          <site1>-0.029991628 -0.017315675 0.025800788</site1> <!-- s2_4 -->
+          <site2>-0.029362858 -0.016952654 0.011298387</site2> <!-- s3_3 -->
+        </segment>
+        <segment>
+          <link1>link3</link1>
+          <link2>link4</link2>
+          <site1>-0.028462270 -0.016432699 0.024485133</site1> <!-- s3_4 -->
+          <site2>-0.027865563 -0.016088190 0.010722251</site2> <!-- s4_3 -->
+        </segment>
+        <segment>
+          <link1>link4</link1>
+          <link2>link5</link2>
+          <site1>-0.027010898 -0.015594749 0.023236567</site1> <!-- s4_4 -->
+          <site2>-0.026444619 -0.015267808 0.010175493</site2> <!-- s5_3 -->
+        </segment>
+        <segment>
+          <link1>link5</link1>
+          <link2>link6</link2>
+          <site1>-0.025633536 -0.014799529 0.022051668</site1> <!-- s5_4 -->
+          <site2>-0.025096133 -0.014489259 0.009656615</site2> <!-- s6_3 -->
+        </segment>
+        <segment>
+          <link1>link6</link1>
+          <link2>link7</link2>
+          <site1>-0.024326409 -0.014044859 0.020927191</site1> <!-- s6_4 -->
+          <site2>-0.023816410 -0.013750410 0.009164197</site2> <!-- s7_3 -->
+        </segment>
+        <segment>
+          <link1>link7</link1>
+          <link2>link8</link2>
+          <site1>-0.023085937 -0.013328672 0.019860054</site1> <!-- s7_4 -->
+          <site2>-0.022601943 -0.013049238 0.008696889</site2> <!-- s8_3 -->
+        </segment>
+        <segment>
+          <link1>link8</link1>
+          <link2>link9</link2>
+          <site1>-0.021908719 -0.012649005 0.018847334</site1> <!-- s8_4 -->
+          <site2>-0.021449406 -0.012383820 0.008253410</site2> <!-- s9_3 -->
+        </segment>
+        <segment>
+          <link1>link9</link1>
+          <link2>link10</link2>
+          <site1>-0.020791531 -0.012003996 0.017886255</site1> <!-- s9_4 -->
+          <site2>-0.020355640 -0.011752334 0.007832545</site2> <!-- s10_3 -->
+        </segment>
+        <segment>
+          <link1>link10</link1>
+          <link2>link11</link2>
+          <site1>-0.019731312 -0.011391878 0.016974184</site1> <!-- s10_4 -->
+          <site2>-0.019317648 -0.011153049 0.007433141</site2> <!-- s11_3 -->
+        </segment>
+        <segment>
+          <link1>link11</link1>
+          <link2>link12</link2>
+          <site1>-0.018725157 -0.010810974 0.016108622</site1> <!-- s11_4 -->
+          <site2>-0.018332586 -0.010584324 0.007054104</site2> <!-- s12_3 -->
+        </segment>
+        <segment>
+          <link1>link12</link1>
+          <link2>link13</link2>
+          <site1>-0.017770308 -0.010259692 0.015287197</site1> <!-- s12_4 -->
+          <site2>-0.017397756 -0.010044599 0.006694395</site2> <!-- s13_3 -->
+        </segment>
+        <segment>
+          <link1>link13</link1>
+          <link2>link14</link2>
+          <site1>-0.016864149 -0.009736521 0.014507660</site1> <!-- s13_4 -->
+          <site2>-0.016510595 -0.009532396 0.006353029</site2> <!-- s14_3 -->
+        </segment>
+        <segment>
+          <link1>link14</link1>
+          <link2>link15</link2>
+          <site1>-0.016004198 -0.009240028 0.013767873</site1> <!-- s14_4 -->
+          <site2>-0.015668673 -0.009046312 0.006029070</site2> <!-- s15_3 -->
+        </segment>
+        <segment>
+          <link1>link15</link1>
+          <link2>link16</link2>
+          <site1>-0.015188099 -0.008768853 0.013065810</site1> <!-- s15_4 -->
+          <site2>-0.014869683 -0.008585015 0.005721631</site2> <!-- s16_3 -->
+        </segment>
+        <segment>
+          <link1>link16</link1>
+          <link2>link17</link2>
+          <site1>-0.014413615 -0.008321704 0.012399547</site1> <!-- s16_4 -->
+          <site2>-0.014111435 -0.008147241 0.005429869</site2> <!-- s17_3 -->
+        </segment>
+        <segment>
+          <link1>link17</link1>
+          <link2>link18</link2>
+          <site1>-0.013678624 -0.007897357 0.011767259</site1> <!-- s17_4 -->
+          <site2>-0.013391853 -0.007731790 0.005152984</site2> <!-- s18_3 -->
+        </segment>
+        <segment>
+          <link1>link18</link1>
+          <link2>link19</link2>
+          <site1>-0.012981112 -0.007494648 0.011167213</site1> <!-- s18_4 -->
+          <site2>-0.012708965 -0.007337524 0.004890219</site2> <!-- s19_3 -->
+        </segment>
+        <segment>
+          <link1>link19</link1>
+          <link2>link20</link2>
+          <site1>-0.012319168 -0.007112475 0.010597766</site1> <!-- s19_4 -->
+          <site2>-0.012060898 -0.006963363 0.004640853</site2> <!-- s20_3 -->
+        </segment>
+        <segment>
+          <link1>link20</link1>
+          <link2>link21</link2>
+          <site1>-0.011690979 -0.006749790 0.010057355</site1> <!-- s20_4 -->
+          <site2>-0.011445879 -0.006608281 0.004404203</site2> <!-- s21_3 -->
+        </segment>
+        <segment>
+          <link1>link21</link1>
+          <link2>link22</link2>
+          <site1>-0.011094822 -0.006405599 0.009544502</site1> <!-- s21_4 -->
+          <site2>-0.010862221 -0.006271306 0.004179620</site2> <!-- s22_3 -->
+        </segment>
+        <segment>
+          <link1>link22</link1>
+          <link2>link23</link2>
+          <site1>-0.010529066 -0.006078959 0.009057801</site1> <!-- s22_4 -->
+          <site2>-0.010308326 -0.005951515 0.003966489</site2> <!-- s23_3 -->
+        </segment>
+        <segment>
+          <link1>link23</link1>
+          <link2>link24</link2>
+          <site1>-0.009992159 -0.005768976 0.008595918</site1> <!-- s23_4 -->
+          <site2>-0.009782675 -0.005648030 0.003764227</site2> <!-- s24_3 -->
+        </segment>
+      </tendon>
+    </plugin>
+
+    <plugin filename="gz-sim-tendon-system"
+      name="gz::sim::systems::Tendon">
+      <tendon>
+        <name>tendon3</name>
+        <segment>
+          <link1>link1</link1>
+          <link2>link2</link2>
+          <site1>0.031603163 -0.018246095 0.027187138</site1> <!-- s1_6 -->
+          <site2>0.030940608 -0.017863568 0.011905482</site2> <!-- s2_5 -->
+        </segment>
+        <segment>
+          <link1>link2</link1>
+          <link2>link3</link2>
+          <site1>0.029991628 -0.017315675 0.025800788</site1> <!-- s2_6 -->
+          <site2>0.029362858 -0.016952654 0.011298387</site2> <!-- s3_5 -->
+        </segment>
+        <segment>
+          <link1>link3</link1>
+          <link2>link4</link2>
+          <site1>0.028462270 -0.016432699 0.024485133</site1> <!-- s3_6 -->
+          <site2>0.027865563 -0.016088190 0.010722251</site2> <!-- s4_5 -->
+        </segment>
+        <segment>
+          <link1>link4</link1>
+          <link2>link5</link2>
+          <site1>0.027010898 -0.015594749 0.023236567</site1> <!-- s4_6 -->
+          <site2>0.026444619 -0.015267808 0.010175493</site2> <!-- s5_5 -->
+        </segment>
+        <segment>
+          <link1>link5</link1>
+          <link2>link6</link2>
+          <site1>0.025633536 -0.014799529 0.022051668</site1> <!-- s5_6 -->
+          <site2>0.025096133 -0.014489259 0.009656615</site2> <!-- s6_5 -->
+        </segment>
+        <segment>
+          <link1>link6</link1>
+          <link2>link7</link2>
+          <site1>0.024326409 -0.014044859 0.020927191</site1> <!-- s6_6 -->
+          <site2>0.023816410 -0.013750410 0.009164197</site2> <!-- s7_5 -->
+        </segment>
+        <segment>
+          <link1>link7</link1>
+          <link2>link8</link2>
+          <site1>0.023085937 -0.013328672 0.019860054</site1> <!-- s7_6 -->
+          <site2>0.022601943 -0.013049238 0.008696889</site2> <!-- s8_5 -->
+        </segment>
+        <segment>
+          <link1>link8</link1>
+          <link2>link9</link2>
+          <site1>0.021908719 -0.012649005 0.018847334</site1> <!-- s8_6 -->
+          <site2>0.021449406 -0.012383820 0.008253410</site2> <!-- s9_5 -->
+        </segment>
+        <segment>
+          <link1>link9</link1>
+          <link2>link10</link2>
+          <site1>0.020791531 -0.012003996 0.017886255</site1> <!-- s9_6 -->
+          <site2>0.020355640 -0.011752334 0.007832545</site2> <!-- s10_5 -->
+        </segment>
+        <segment>
+          <link1>link10</link1>
+          <link2>link11</link2>
+          <site1>0.019731312 -0.011391878 0.016974184</site1> <!-- s10_6 -->
+          <site2>0.019317648 -0.011153049 0.007433141</site2> <!-- s11_5 -->
+        </segment>
+        <segment>
+          <link1>link11</link1>
+          <link2>link12</link2>
+          <site1>0.018725157 -0.010810974 0.016108622</site1> <!-- s11_6 -->
+          <site2>0.018332586 -0.010584324 0.007054104</site2> <!-- s12_5 -->
+        </segment>
+        <segment>
+          <link1>link12</link1>
+          <link2>link13</link2>
+          <site1>0.017770308 -0.010259692 0.015287197</site1> <!-- s12_6 -->
+          <site2>0.017397756 -0.010044599 0.006694395</site2> <!-- s13_5 -->
+        </segment>
+        <segment>
+          <link1>link13</link1>
+          <link2>link14</link2>
+          <site1>0.016864149 -0.009736521 0.014507660</site1> <!-- s13_6 -->
+          <site2>0.016510595 -0.009532396 0.006353029</site2> <!-- s14_5 -->
+        </segment>
+        <segment>
+          <link1>link14</link1>
+          <link2>link15</link2>
+          <site1>0.016004198 -0.009240028 0.013767873</site1> <!-- s14_6 -->
+          <site2>0.015668673 -0.009046312 0.006029070</site2> <!-- s15_5 -->
+        </segment>
+        <segment>
+          <link1>link15</link1>
+          <link2>link16</link2>
+          <site1>0.015188099 -0.008768853 0.013065810</site1> <!-- s15_6 -->
+          <site2>0.014869683 -0.008585015 0.005721631</site2> <!-- s16_5 -->
+        </segment>
+        <segment>
+          <link1>link16</link1>
+          <link2>link17</link2>
+          <site1>0.014413615 -0.008321704 0.012399547</site1> <!-- s16_6 -->
+          <site2>0.014111435 -0.008147241 0.005429869</site2> <!-- s17_5 -->
+        </segment>
+        <segment>
+          <link1>link17</link1>
+          <link2>link18</link2>
+          <site1>0.013678624 -0.007897357 0.011767259</site1> <!-- s17_6 -->
+          <site2>0.013391853 -0.007731790 0.005152984</site2> <!-- s18_5 -->
+        </segment>
+        <segment>
+          <link1>link18</link1>
+          <link2>link19</link2>
+          <site1>0.012981112 -0.007494648 0.011167213</site1> <!-- s18_6 -->
+          <site2>0.012708965 -0.007337524 0.004890219</site2> <!-- s19_5 -->
+        </segment>
+        <segment>
+          <link1>link19</link1>
+          <link2>link20</link2>
+          <site1>0.012319168 -0.007112475 0.010597766</site1> <!-- s19_6 -->
+          <site2>0.012060898 -0.006963363 0.004640853</site2> <!-- s20_5 -->
+        </segment>
+        <segment>
+          <link1>link20</link1>
+          <link2>link21</link2>
+          <site1>0.011690979 -0.006749790 0.010057355</site1> <!-- s20_6 -->
+          <site2>0.011445879 -0.006608281 0.004404203</site2> <!-- s21_5 -->
+        </segment>
+        <segment>
+          <link1>link21</link1>
+          <link2>link22</link2>
+          <site1>0.011094822 -0.006405599 0.009544502</site1> <!-- s21_6 -->
+          <site2>0.010862221 -0.006271306 0.004179620</site2> <!-- s22_5 -->
+        </segment>
+        <segment>
+          <link1>link22</link1>
+          <link2>link23</link2>
+          <site1>0.010529066 -0.006078959 0.009057801</site1> <!-- s22_6 -->
+          <site2>0.010308326 -0.005951515 0.003966489</site2> <!-- s23_5 -->
+        </segment>
+        <segment>
+          <link1>link23</link1>
+          <link2>link24</link2>
+          <site1>0.009992159 -0.005768976 0.008595918</site1> <!-- s23_6 -->
+          <site2>0.009782675 -0.005648030 0.003764227</site2> <!-- s24_5 -->
+        </segment>
       </tendon>
     </plugin>
 
