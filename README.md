@@ -29,6 +29,8 @@ cd gz-spirob/gz_spirob_gazebo/scripts
 python grasp_2d.py
 ```
 
+https://github.com/user-attachments/assets/a2c3cb95-537e-4067-b2c0-16f17afff52e
+
 ## References
 
 Models are designed and exported to MuJoCo XML using the [Open-Spiral-Robots](https://github.com/ZhanchiWang/Open-Spiral-Robots) toolkit. This forms a
