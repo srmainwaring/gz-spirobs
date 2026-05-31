@@ -1,0 +1,2534 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="spirob_3d">
+    <static>0</static>
+    <self_collide>1</self_collide>
+    <link name="base_link">
+      <pose degrees="true">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>10000</density>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <joint name="joint01" type="fixed">
+      <pose degrees="true" relative_to="base_link">0 0 0.05 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>link1</child>
+    </joint>
+
+    <link name="link1">
+      <pose degrees="true" relative_to="joint01">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.001000000 0.001000000 0.001000000</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001000000 0.001000000 0.001000000</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s1_1">
+        <pose>0.000000000 0.037646857 0.012545197 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s1_2">
+        <pose>0.000000000 0.036492190 0.027187138 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s1_3">
+        <pose>-0.032603134 -0.018823428 0.012545197 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s1_4">
+        <pose>-0.031603163 -0.018246095 0.027187138 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s1_5">
+        <pose>0.032603134 -0.018823428 0.012545197 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s1_6">
+        <pose>0.031603163 -0.018246095 0.027187138 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link2">
+      <pose degrees="true" relative_to="joint12">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <density>1100</density>
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000949007 0.000949007 0.000949007</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000949007 0.000949007 0.000949007</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_1">
+        <pose>0.000000000 0.035727136 0.011905482 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_2">
+        <pose>0.000000000 0.034631350 0.025800788 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_3">
+        <pose>-0.030940608 -0.017863568 0.011905482 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_4">
+        <pose>-0.029991628 -0.017315675 0.025800788 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_5">
+        <pose>0.030940608 -0.017863568 0.011905482 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s2_6">
+        <pose>0.029991628 -0.017315675 0.025800788 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+    </link>
+    <link name="link3">
+      <pose degrees="true" relative_to="joint23">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000900615 0.000900615 0.000900615</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000900615 0.000900615 0.000900615</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s3_1">
+        <pose>0.013962228 0.030255683 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s3_2">
+        <pose>0.035582249 0.028617420 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s3_3">
+        <pose>0.013962228 -0.030255683 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s3_4">
+        <pose>0.035582249 -0.028617420 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link4">
+      <pose degrees="true" relative_to="joint34">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000854690 0.000854690 0.000854690</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000854690 0.000854690 0.000854690</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s4_1">
+        <pose>0.012730400 0.027586354 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s4_2">
+        <pose>0.032442980 0.026092627 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s4_3">
+        <pose>0.012730400 -0.027586354 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s4_4">
+        <pose>0.032442980 -0.026092627 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link5">
+      <pose degrees="true" relative_to="joint45">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000811107 0.000811107 0.000811107</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000811107 0.000811107 0.000811107</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s5_1">
+        <pose>0.011607252 0.025152528 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s5_2">
+        <pose>0.029580674 0.023790586 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s5_3">
+        <pose>0.011607252 -0.025152528 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s5_4">
+        <pose>0.029580674 -0.023790586 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link6">
+      <pose degrees="true" relative_to="joint56">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000769746 0.000769746 0.000769746</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000769746 0.000769746 0.000769746</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s6_1">
+        <pose>0.010583193 0.022933428 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s6_2">
+        <pose>0.026970898 0.021691645 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s6_3">
+        <pose>0.010583193 -0.022933428 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s6_4">
+        <pose>0.026970898 -0.021691645 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link7">
+      <pose degrees="true" relative_to="joint67">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000730494 0.000730494 0.000730494</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000730494 0.000730494 0.000730494</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s7_1">
+        <pose>0.009649483 0.020910109 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s7_2">
+        <pose>0.024591371 0.019777884 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s7_3">
+        <pose>0.009649483 -0.020910109 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s7_4">
+        <pose>0.024591371 -0.019777884 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link8">
+      <pose degrees="true" relative_to="joint78">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000693244 0.000693244 0.000693244</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000693244 0.000693244 0.000693244</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s8_1">
+        <pose>0.008798151 0.019065300 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s8_2">
+        <pose>0.022421779 0.018032965 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s8_3">
+        <pose>0.008798151 -0.019065300 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s8_4">
+        <pose>0.022421779 -0.018032965 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link9">
+      <pose degrees="true" relative_to="joint89">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000657894 0.000657894 0.000657894</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000657894 0.000657894 0.000657894</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s9_1">
+        <pose>0.008021928 0.017383250 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s9_2">
+        <pose>0.020443602 0.016441994 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s9_3">
+        <pose>0.008021928 -0.017383250 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s9_4">
+        <pose>0.020443602 -0.016441994 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link10">
+      <pose degrees="true" relative_to="joint910">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000624346 0.000624346 0.000624346</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000624346 0.000624346 0.000624346</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s10_1">
+        <pose>0.007314187 0.015849600 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s10_2">
+        <pose>0.018639950 0.014991387 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s10_3">
+        <pose>0.007314187 -0.015849600 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s10_4">
+        <pose>0.018639950 -0.014991387 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link11">
+      <pose degrees="true" relative_to="joint1011">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000592509 0.000592509 0.000592509</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000592509 0.000592509 0.000592509</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s11_1">
+        <pose>0.006668888 0.014451258 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s11_2">
+        <pose>0.016995427 0.013668761 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s11_3">
+        <pose>0.006668888 -0.014451258 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s11_4">
+        <pose>0.016995427 -0.013668761 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link12">
+      <pose degrees="true" relative_to="joint1112">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000562295 0.000562295 0.000562295</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000562295 0.000562295 0.000562295</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s12_1">
+        <pose>0.006080520 0.013176285 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s12_2">
+        <pose>0.015495993 0.012462825 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s12_3">
+        <pose>0.006080520 -0.013176285 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s12_4">
+        <pose>0.015495993 -0.012462825 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link13">
+      <pose degrees="true" relative_to="joint1213">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000533622 0.000533622 0.000533622</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000533622 0.000533622 0.000533622</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s13_1">
+        <pose>0.005544062 0.012013798 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s13_2">
+        <pose>0.014128848 0.011363283 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s13_3">
+        <pose>0.005544062 -0.012013798 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s13_4">
+        <pose>0.014128848 -0.011363283 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link14">
+      <pose degrees="true" relative_to="joint1314">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000506411 0.000506411 0.000506411</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000506411 0.000506411 0.000506411</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s14_1">
+        <pose>0.005054933 0.010953872 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s14_2">
+        <pose>0.012882320 0.010360749 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s14_3">
+        <pose>0.005054933 -0.010953872 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s14_4">
+        <pose>0.012882320 -0.010360749 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link15">
+      <pose degrees="true" relative_to="joint1415">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000480588 0.000480588 0.000480588</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000480588 0.000480588 0.000480588</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s15_1">
+        <pose>0.004608958 0.009987459 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s15_2">
+        <pose>0.011745768 0.009446665 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s15_3">
+        <pose>0.004608958 -0.009987459 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s15_4">
+        <pose>0.011745768 -0.009446665 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link16">
+      <pose degrees="true" relative_to="joint1516">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000456081 0.000456081 0.000456081</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000456081 0.000456081 0.000456081</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s16_1">
+        <pose>0.004202329 0.009106308 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s16_2">
+        <pose>0.010709489 0.008613226 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s16_3">
+        <pose>0.004202329 -0.009106308 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s16_4">
+        <pose>0.010709489 -0.008613226 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link17">
+      <pose degrees="true" relative_to="joint1617">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000432825 0.000432825 0.000432825</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000432825 0.000432825 0.000432825</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s17_1">
+        <pose>0.003831576 0.008302897 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s17_2">
+        <pose>0.009764637 0.007853318 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s17_3">
+        <pose>0.003831576 -0.008302897 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s17_4">
+        <pose>0.009764637 -0.007853318 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link18">
+      <pose degrees="true" relative_to="joint1718">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000410754 0.000410754 0.000410754</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000410754 0.000410754 0.000410754</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s18_1">
+        <pose>0.003493532 0.007570368 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s18_2">
+        <pose>0.008903145 0.007160453 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s18_3">
+        <pose>0.003493532 -0.007570368 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s18_4">
+        <pose>0.008903145 -0.007160453 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link19">
+      <pose degrees="true" relative_to="joint1819">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000389808 0.000389808 0.000389808</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000389808 0.000389808 0.000389808</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s19_1">
+        <pose>0.003185313 0.006902467 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s19_2">
+        <pose>0.008117658 0.006528717 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s19_3">
+        <pose>0.003185313 -0.006902467 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s19_4">
+        <pose>0.008117658 -0.006528717 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link20">
+      <pose degrees="true" relative_to="joint1920">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000369931 0.000369931 0.000369931</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000369931 0.000369931 0.000369931</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s20_1">
+        <pose>0.002904286 0.006293492 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_2">
+        <pose>0.007401472 0.005952716 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_3">
+        <pose>0.002904286 -0.006293492 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s20_4">
+        <pose>0.007401472 -0.005952716 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link21">
+      <pose degrees="true" relative_to="joint2021">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000351067 0.000351067 0.000351067</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000351067 0.000351067 0.000351067</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s21_1">
+        <pose>0.002648054 0.005738244 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s21_2">
+        <pose>0.006748472 0.005427533 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s21_3">
+        <pose>0.002648054 -0.005738244 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s21_4">
+        <pose>0.006748472 -0.005427533 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link22">
+      <pose degrees="true" relative_to="joint2122">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000333165 0.000333165 0.000333165</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000333165 0.000333165 0.000333165</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s22_1">
+        <pose>0.002414427 0.005231983 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s22_2">
+        <pose>0.006153083 0.004948685 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s22_3">
+        <pose>0.002414427 -0.005231983 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s22_4">
+        <pose>0.006153083 -0.004948685 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link23">
+      <pose degrees="true" relative_to="joint2223">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000316176 0.000316176 0.000316176</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000316176 0.000316176 0.000316176</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s23_1">
+        <pose>0.002201413 0.004770388 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s23_2">
+        <pose>0.005610223 0.004512084 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s23_3">
+        <pose>0.002201413 -0.004770388 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s23_4">
+        <pose>0.005610223 -0.004512084 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+    <link name="link24">
+      <pose degrees="true" relative_to="joint2324">0 0 0 0 0 0</pose>
+      <inertial auto="true" />
+      <collision name="collision">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <density>1100</density>
+        <geometry>
+          <mesh>
+            <scale>0.000300053 0.000300053 0.000300053</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose degrees="true">0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.000300053 0.000300053 0.000300053</scale>
+            <uri>meshes/baselink.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.30859375 0.47265625 0.2578125</ambient>
+          <diffuse>0.30859375 0.47265625 0.2578125</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <!--<visual name="s24_1">
+        <pose>0.002007191 0.004349517 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s24_2">
+        <pose>0.005115257 0.004114002 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s24_3">
+        <pose>0.002007191 -0.004349517 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>
+      <visual name="s24_4">
+        <pose>0.005115257 -0.004114002 0 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.001000</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <ambient>1 0 0</ambient>
+          <diffuse>1 0 0</diffuse>
+          <specular>0.1 0.1 0.1</specular>
+        </material>
+      </visual>-->
+    </link>
+
+    <joint name="joint12" type="ball">
+      <pose degrees="true" relative_to="link1">0 0 0.026276293 0 0 0</pose>
+      <parent>link1</parent>
+      <child>link2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>2.00</damping>
+          <spring_stiffness>5.00</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint23" type="ball">
+      <pose degrees="true" relative_to="link2">0 0 0.024936390 0 0 0</pose>
+      <parent>link2</parent>
+      <child>link3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.898014</damping>
+          <spring_stiffness>4.503073</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint34" type="ball">
+      <pose degrees="true" relative_to="link3">0 0 0.023664813 0 0 0</pose>
+      <parent>link3</parent>
+      <child>link4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.801229</damping>
+          <spring_stiffness>4.055533</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint45" type="ball">
+      <pose degrees="true" relative_to="link4">0 0 0.022458077 0 0 0</pose>
+      <parent>link4</parent>
+      <child>link5</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.709379</damping>
+          <spring_stiffness>3.652472</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint56" type="ball">
+      <pose degrees="true" relative_to="link5">0 0 0.021312876 0 0 0</pose>
+      <parent>link5</parent>
+      <child>link6</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.622213</damping>
+          <spring_stiffness>3.289470</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint67" type="ball">
+      <pose degrees="true" relative_to="link6">0 0 0.020226072 0 0 0</pose>
+      <parent>link6</parent>
+      <child>link7</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.539492</damping>
+          <spring_stiffness>2.962545</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint78" type="ball">
+      <pose degrees="true" relative_to="link7">0 0 0.019194687 0 0 0</pose>
+      <parent>link7</parent>
+      <child>link8</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.460989</damping>
+          <spring_stiffness>2.668111</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint89" type="ball">
+      <pose degrees="true" relative_to="link8">0 0 0.018215896 0 0 0</pose>
+      <parent>link8</parent>
+      <child>link9</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.386489</damping>
+          <spring_stiffness>2.402940</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint910" type="ball">
+      <pose degrees="true" relative_to="link9">0 0 0.017287015 0 0 0</pose>
+      <parent>link9</parent>
+      <child>link10</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.315788</damping>
+          <spring_stiffness>2.16412</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1011" type="ball">
+      <pose degrees="true" relative_to="link10">0 0 0.016405501 0 0 0</pose>
+      <parent>link10</parent>
+      <child>link11</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.248692</damping>
+          <spring_stiffness>1.949040</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1112" type="ball">
+      <pose degrees="true" relative_to="link11">0 0 0.015568938 0 0 0</pose>
+      <parent>link11</parent>
+      <child>link12</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.185018</damping>
+          <spring_stiffness>1.755334</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1213" type="ball">
+      <pose degrees="true" relative_to="link12">0 0 0.014775034 0 0 0</pose>
+      <parent>link12</parent>
+      <child>link13</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.124590</damping>
+          <spring_stiffness>1.580880</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1314" type="ball">
+      <pose degrees="true" relative_to="link13">0 0 0.014021613 0 0 0</pose>
+      <parent>link13</parent>
+      <child>link14</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.067244</damping>
+          <spring_stiffness>1.423763</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1415" type="ball">
+      <pose degrees="true" relative_to="link14">0 0 0.013306611 0 0 0</pose>
+      <parent>link14</parent>
+      <child>link15</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>1.012823</damping>
+          <spring_stiffness>1.282262</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1516" type="ball">
+      <pose degrees="true" relative_to="link15">0 0 0.012628069 0 0 0</pose>
+      <parent>link15</parent>
+      <child>link16</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.961176</damping>
+          <spring_stiffness>1.154824</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1617" type="ball">
+      <pose degrees="true" relative_to="link16">0 0 0.011984128 0 0 0</pose>
+      <parent>link16</parent>
+      <child>link17</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.912163</damping>
+          <spring_stiffness>1.040051</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1718" type="ball">
+      <pose degrees="true" relative_to="link17">0 0 0.011373024 0 0 0</pose>
+      <parent>link17</parent>
+      <child>link18</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.865649</damping>
+          <spring_stiffness>0.936685</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1819" type="ball">
+      <pose degrees="true" relative_to="link18">0 0 0.010793081 0 0 0</pose>
+      <parent>link18</parent>
+      <child>link19</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.821507</damping>
+          <spring_stiffness>0.843592</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint1920" type="ball">
+      <pose degrees="true" relative_to="link19">0 0 0.010242711 0 0 0</pose>
+      <parent>link19</parent>
+      <child>link20</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.779616</damping>
+          <spring_stiffness>0.759752</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2021" type="ball">
+      <pose degrees="true" relative_to="link20">0 0 0.009720406 0 0 0</pose>
+      <parent>link20</parent>
+      <child>link21</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.739861</damping>
+          <spring_stiffness>0.684243</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2122" type="ball">
+      <pose degrees="true" relative_to="link21">0 0 0.009224735 0 0 0</pose>
+      <parent>link21</parent>
+      <child>link22</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.702134</damping>
+          <spring_stiffness>0.616240</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2223" type="ball">
+      <pose degrees="true" relative_to="link22">0 0 0.008754340 0 0 0</pose>
+      <parent>link22</parent>
+      <child>link23</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.666330</damping>
+          <spring_stiffness>0.554994</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="joint2324" type="ball">
+      <pose degrees="true" relative_to="link23">0 0 0.008307931 0 0 0</pose>
+      <parent>link23</parent>
+      <child>link24</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-0.29670597</lower>
+          <upper>0.29670597</upper>
+        </limit>
+        <dynamics>
+          <damping>0.632352</damping>
+          <spring_stiffness>0.499836</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+
+
+    <!--
+    Tendon defined as a number of segments, not necessarily continuous
+    in definition, as some sections may run through links.
+    All segments assumed to be at the same tension.
+    Sites are specified in link frame coordinates.
+    -->
+    <plugin filename="gz-sim-tendon-system"
+      name="gz::sim::systems::Tendon">
+      <tendon>
+        <name>tendon1</name>
+        <segment>
+          <link1>link1</link1>
+          <link2>link2</link2>
+          <site1>0.000000000 0.036492190 0.027187138</site1> <!-- s1_2 -->
+          <site2>0.000000000 0.035727136 0.011905482</site2> <!-- s2_1 -->
+        </segment>
+        <segment>
+          <link1>link2</link1>
+          <link2>link3</link2>
+          <site1>0.000000000 0.034631350 0.025800788</site1> <!-- s2_2 -->
+          <site2>0.000000000 0.033905308 0.011298387</site2> <!-- s3_1 -->
+        </segment>
+        <segment>
+          <link1>link3</link1>
+          <link2>link4</link2>
+          <site1>0.000000000 0.032865399 0.024485133</site1> <!-- s3_2 -->
+          <site2>0.000000000 0.032176381 0.010722251</site2> <!-- s4_1 -->
+        </segment>
+        <segment>
+          <link1>link4</link1>
+          <link2>link5</link2>
+          <site1>0.000000000 0.031189499 0.023236567</site1> <!-- s4_2 -->
+          <site2>0.000000000 0.030535616 0.010175493</site2> <!-- s5_1 -->
+        </segment>
+        <segment>
+          <link1>link5</link1>
+          <link2>link6</link2>
+          <site1>0.000000000 0.029599058 0.022051668</site1> <!-- s5_2 -->
+          <site2>0.000000000 0.028978518 0.009656615</site2> <!-- s6_1 -->
+        </segment>
+        <segment>
+          <link1>link6</link1>
+          <link2>link7</link2>
+          <site1>0.000000000 0.028089718 0.020927191</site1> <!-- s6_2 -->
+          <site2>0.000000000 0.027500821 0.009164197</site2> <!-- s7_1 -->
+        </segment>
+        <segment>
+          <link1>link7</link1>
+          <link2>link8</link2>
+          <site1>0.000000000 0.026657343 0.019860054</site1> <!-- s7_2 -->
+          <site2>0.000000000 0.026098476 0.008696889</site2> <!-- s8_1 -->
+        </segment>
+        <segment>
+          <link1>link8</link1>
+          <link2>link9</link2>
+          <site1>0.000000000 0.025298010 0.018847334</site1> <!-- s8_2 -->
+          <site2>0.000000000 0.024767641 0.008253410</site2> <!-- s9_1 -->
+        </segment>
+        <segment>
+          <link1>link9</link1>
+          <link2>link10</link2>
+          <site1>0.000000000 0.024007992 0.017886255</site1> <!-- s9_2 -->
+          <site2>0.000000000 0.023504668 0.007832545</site2> <!-- s10_1 -->
+        </segment>
+        <segment>
+          <link1>link10</link1>
+          <link2>link11</link2>
+          <site1>0.000000000 0.022783757 0.016974184</site1> <!-- s10_2 -->
+          <site2>0.000000000 0.022306099 0.007433141</site2> <!-- s11_1 -->
+        </segment>
+        <segment>
+          <link1>link11</link1>
+          <link2>link12</link2>
+          <site1>0.000000000 0.021621948 0.016108622</site1> <!-- s11_2 -->
+          <site2>0.000000000 0.021168647 0.007054104</site2> <!-- s12_1 -->
+        </segment>
+        <segment>
+          <link1>link12</link1>
+          <link2>link13</link2>
+          <site1>0.000000000 0.021168647 0.007054104</site1> <!-- s12_2 -->
+          <site2>0.000000000 0.020089198 0.006694395</site2> <!-- s13_1 -->
+        </segment>
+        <segment>
+          <link1>link13</link1>
+          <link2>link14</link2>
+          <site1>0.000000000 0.019473042 0.014507660</site1> <!-- s13_2 -->
+          <site2>0.000000000 0.019064793 0.006353029</site2> <!-- s14_1 -->
+        </segment>
+        <segment>
+          <link1>link14</link1>
+          <link2>link15</link2>
+          <site1>0.000000000 0.018480057 0.013767873</site1> <!-- s14_2 -->
+          <site2>0.000000000 0.018092625 0.006029070</site2> <!-- s15_1 -->
+        </segment>
+        <segment>
+          <link1>link15</link1>
+          <link2>link16</link2>
+          <site1>0.000000000 0.017537706 0.013065810</site1> <!-- s15_2 -->
+          <site2>0.000000000 0.017170031 0.005721631</site2> <!-- s16_1 -->
+        </segment>
+        <segment>
+          <link1>link16</link1>
+          <link2>link17</link2>
+          <site1>0.000000000 0.016643409 0.012399547</site1> <!-- s16_2 -->
+          <site2>0.000000000 0.016294482 0.005429869</site2> <!-- s17_1 -->
+        </segment>
+        <segment>
+          <link1>link17</link1>
+          <link2>link18</link2>
+          <site1>0.000000000 0.015794714 0.011767259</site1> <!-- s17_2 -->
+          <site2>0.000000000 0.015463580 0.005152984</site2> <!-- s18_1 -->
+        </segment>
+        <segment>
+          <link1>link18</link1>
+          <link2>link19</link2>
+          <site1>0.000000000 0.014989297 0.011167213</site1> <!-- s18_2 -->
+          <site2>0.000000000 0.014675048 0.004890219</site2> <!-- s19_1 -->
+        </segment>
+        <segment>
+          <link1>link19</link1>
+          <link2>link20</link2>
+          <site1>0.000000000 0.014224950 0.010597766</site1> <!-- s19_2 -->
+          <site2>0.000000000 0.013926726 0.004640853</site2> <!-- s20_1 -->
+        </segment>
+        <segment>
+          <link1>link20</link1>
+          <link2>link21</link2>
+          <site1>0.000000000 0.013499579 0.010057355</site1> <!-- s20_2 -->
+          <site2>0.000000000 0.013216563 0.004404203</site2> <!-- s21_1 -->
+        </segment>
+        <segment>
+          <link1>link21</link1>
+          <link2>link22</link2>
+          <site1>0.000000000 0.012811197 0.009544502</site1> <!-- s21_2 -->
+          <site2>0.000000000 0.012542613 0.004179620</site2> <!-- s22_1 -->
+        </segment>
+        <segment>
+          <link1>link22</link1>
+          <link2>link23</link2>
+          <site1>0.000000000 0.012157918 0.009057801</site1> <!-- s22_2 -->
+          <site2>0.000000000 0.011903029 0.003966489</site2> <!-- s23_1 -->
+        </segment>
+        <segment>
+          <link1>link23</link1>
+          <link2>link24</link2>
+          <site1>0.000000000 0.011537951 0.008595918</site1> <!-- s23_2 -->
+          <site2>0.000000000 0.011296060 0.003764227</site2> <!-- s24_1 -->
+        </segment>
+
+      </tendon>
+    </plugin>
+
+  </model>
+</sdf>
