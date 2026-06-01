@@ -98,6 +98,12 @@ class gz::sim::systems::TendonPrivate
   public: std::vector<double> prevSumSegmentLengths;
   public: std::vector<double> deltaSumSegmentLengths;
 
+  // AI (ChatGPT)
+  public: std::vector<double> T_in;
+  public: std::vector<double> T_out;
+  public: std::vector<double> T_prev_out;
+  public: std::vector<bool> sliding;
+
   /// \brief Friction coefficient.
   public: double mu = 0.1;
 
@@ -228,6 +234,12 @@ void Tendon::Configure(const Entity &_entity,
   this->dataPtr->prevSumSegmentLengths.resize(segmentCount);
   this->dataPtr->deltaSumSegmentLengths.resize(segmentCount);
 
+  //AI
+  this->dataPtr->T_in.resize(segmentCount, 0.0);
+  this->dataPtr->T_out.resize(segmentCount, 0.0);
+  this->dataPtr->T_prev_out.resize(segmentCount, 0.0);
+  this->dataPtr->sliding.resize(segmentCount, false);
+
   // Subscribe to commands
   auto topic = transport::TopicUtils::AsValidTopic("/model/" +
       this->dataPtr->model.Name(_ecm) + "/tendon/" + this->dataPtr->tendonName +
@@ -328,6 +340,11 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     this->dataPtr->segmentLengths[i] = segmentLength;
     this->dataPtr->sumSegmentLengths[i] = sumSegmentLength;
 
+    // AI
+    // @TODO add mutex
+    this->dataPtr->T_in[0] = this->dataPtr->tendonForceCmd;
+    this->dataPtr->T_out[0] = this->dataPtr->tendonForceCmd;
+
     //gzdbg << "r12: " << r12 << std::endl;
 
     // On first pass also set state for previous step 
@@ -349,7 +366,7 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     prevFirstSegmentLength = this->dataPtr->prevSegmentLengths[0];
     prevSumSegmentLength = this->dataPtr->prevSumSegmentLengths.back();
   }
-  gzdbg << "L: " << sumSegmentLength << std::endl;
+  //gzdbg << "L: " << sumSegmentLength << std::endl;
   for (auto i = 0; i < segmentCount; ++i)
   {
     // Distance from the start of of each segment to the fixed end point
@@ -372,9 +389,10 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     this->dataPtr->prevSumSegmentLengths[i]
         = this->dataPtr->sumSegmentLengths[i];
   }
-  gzdbg << std::endl;
+  //gzdbg << std::endl;
 
   // Apply forces
+#if 0
   double cmdForce{0.0};
   {
     std::lock_guard<std::mutex> lock(this->dataPtr->tendonForceCmdMutex);
@@ -420,6 +438,81 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     segment.link2.AddWorldWrench(_ecm, f21, math::Vector3d::Zero,
         segment.site2);
   }
+#endif
+  // AI
+  double T0_cmd;
+  {
+    std::lock_guard<std::mutex> lock(this->dataPtr->tendonForceCmdMutex);
+    T0_cmd = this->dataPtr->tendonForceCmd;
+  }
+
+  // Boundary condition (actuator side)
+  this->dataPtr->T_in[0] = T0_cmd;
+
+  for (auto i = 0; i < segmentCount; ++i)
+  {
+    auto &segment = this->dataPtr->tendonSegments[i];
+
+    // wrap angle
+    double phi = 0.0;
+    if (i > 0)
+    {
+      math::Vector3d d1 = this->dataPtr->segmentDirs[i - 1];
+      math::Vector3d d2 = this->dataPtr->segmentDirs[i];
+      phi = std::acos(std::clamp(d1.Dot(d2), -1.0, 1.0));
+    }
+
+    double Tin = this->dataPtr->T_in[i];
+
+    // capstan bounds
+    double Tmin = Tin * std::exp(-this->dataPtr->mu * phi);
+    double Tmax = Tin * std::exp(+this->dataPtr->mu * phi);
+
+    double Told = this->dataPtr->T_out[i];
+
+    // predicted sliding update (direction from previous step)
+    double Tpred = Tin * std::exp(this->dataPtr->mu * phi *
+                                  (Told >= Tin ? 1.0 : -1.0));
+
+    // --- stick-slip decision ---
+    bool stick = (Told >= Tmin && Told <= Tmax);
+
+    double Tout;
+
+    if (stick)
+    {
+      // STICK: preserve previous state
+      Tout = Told;
+      this->dataPtr->sliding[i] = false;
+    }
+    else
+    {
+      // SLIP: project onto capstan boundary
+      if (Told < Tmin)
+        Tout = Tmin;
+      else
+        Tout = Tmax;
+
+      this->dataPtr->sliding[i] = true;
+    }
+
+    this->dataPtr->T_out[i] = Tout;
+
+    // propagate to next segment
+    if (i + 1 < segmentCount)
+    {
+      this->dataPtr->T_in[i + 1] = Tout;
+    }
+
+    // direction for wrench
+    math::Vector3d u12 = this->dataPtr->segmentDirs[i];
+    math::Vector3d f12 = Tout * u12;
+    math::Vector3d f21 = -f12;
+
+    segment.link1.AddWorldWrench(_ecm, f12, math::Vector3d::Zero, segment.site1);
+    segment.link2.AddWorldWrench(_ecm, f21, math::Vector3d::Zero, segment.site2);
+  }
+
 }
 
 //////////////////////////////////////////////////
