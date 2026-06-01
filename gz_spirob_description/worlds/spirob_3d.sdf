@@ -1,9 +1,17 @@
 <?xml version="1.0" ?>
 <sdf version="1.9">
   <world name="spirob">
-    <physics name="1ms" type="ignore">
+    <physics name="1ms" type="dart">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <max_contacts>20</max_contacts>
+      <dart>
+        <solver>
+          <type>dantzig</type>
+        </solver>
+        <collision_detector>ode</collision_detector>
+      </dart>
     </physics>
 
     <plugin name="gz::sim::systems::Physics"
@@ -71,6 +79,8 @@
     </model>
 
     <model name="arm">
+      <static>0</static>
+      <self_collide>1</self_collide>
       <include merge="true">
         <uri>model://spirob_3d</uri>
         <pose degrees="true">0 0 0.05 0 0 0</pose>
@@ -79,70 +89,7 @@
         <parent>world</parent>
         <child>base_link</child>
       </joint>
-
-      <!--<link name="ball_link">
-        <pose relative_to="ball_joint">0 0 0 0 0 0</pose>
-        <inertial auto="true" />
-        <collision name="collision">
-          <pose degrees="true">0 0 0 0 0 0</pose>
-          <density>1000</density>
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <pose degrees="true">0 0 0 0 0 0</pose>
-          <geometry>
-            <sphere>
-              <radius>0.02</radius>
-            </sphere>
-          </geometry>
-          <material>
-            <ambient>0 1 0</ambient>
-            <diffuse>0 1 0</diffuse>
-            <specular>0.1 0.1 0.1</specular>
-          </material>
-        </visual>
-      </link>
-      <joint name="ball_joint" type="fixed">
-        <pose relative_to="link24">0 0 0 0 0 0</pose>
-        <parent>link24</parent>
-        <child>ball_link</child>
-      </joint>-->
-
     </model>
-
-    <!-- cylinder target -->
-    <!--<model name="target">
-      <pose>0.25 -0.1 0.05 0 0 0</pose>
-      <link name="ball_link">
-        <inertial auto="true" />
-        <collision name="collision">
-          <density>2000</density>
-          <geometry>
-            <cylinder>
-              <radius>0.03</radius>
-              <length>0.1</length>
-            </cylinder>
-          </geometry>
-        </collision>
-        <visual name="visual">
-          <geometry>
-            <cylinder>
-              <radius>0.03</radius>
-              <length>0.1</length>
-            </cylinder>
-          </geometry>
-          <material>
-            <ambient>0 0 1</ambient>
-            <diffuse>0 0 1</diffuse>
-            <specular>0.1 0.1 0.1</specular>
-          </material>
-        </visual>
-      </link>
-    </model>-->
 
   </world>
 </sdf>
