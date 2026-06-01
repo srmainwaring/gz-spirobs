@@ -40,6 +40,13 @@ using namespace gz;
 using namespace sim;
 using namespace systems;
 
+namespace
+{
+  template <typename T>
+  int sgn(T val) {
+      return (T(0) < val) - (val < T(0));
+  }
+}
 
 // Struture to store information about a link segment
 struct TendonSegment
@@ -82,6 +89,17 @@ class gz::sim::systems::TendonPrivate
   public: std::vector<TendonSegment> tendonSegments;
   /// \brief Set to true when all tendon segments are initialised.
   public: bool isValid = false;
+
+  /// \brief Track changes in tendon length at each site.
+  public: std::vector<math::Vector3d> segmentDirs;
+  public: std::vector<double> segmentLengths;
+  public: std::vector<double> sumSegmentLengths;
+  public: std::vector<double> prevSegmentLengths;
+  public: std::vector<double> prevSumSegmentLengths;
+  public: std::vector<double> deltaSumSegmentLengths;
+
+  /// \brief Friction coefficient.
+  public: double mu = 0.1;
 
   /// \brief Model interface
   public: Model model{kNullEntity};
@@ -201,6 +219,15 @@ void Tendon::Configure(const Entity &_entity,
     gzdbg << "site2:          " << segment.site2 << std::endl << std::endl;
   }
 
+  // Resize segment workspace
+  const auto segmentCount = this->dataPtr->tendonSegments.size();
+  this->dataPtr->segmentDirs.resize(segmentCount);
+  this->dataPtr->segmentLengths.resize(segmentCount);
+  this->dataPtr->sumSegmentLengths.resize(segmentCount);
+  this->dataPtr->prevSegmentLengths.resize(segmentCount);
+  this->dataPtr->prevSumSegmentLengths.resize(segmentCount);
+  this->dataPtr->deltaSumSegmentLengths.resize(segmentCount);
+
   // Subscribe to commands
   auto topic = transport::TopicUtils::AsValidTopic("/model/" +
       this->dataPtr->model.Name(_ecm) + "/tendon/" + this->dataPtr->tendonName +
@@ -238,6 +265,7 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     return;
 
   // If the links have not been identified, look for them
+  bool isFirstPass = false;
   if (!this->dataPtr->isValid)
   {
     for (auto && segment: this->dataPtr->tendonSegments)
@@ -265,11 +293,17 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
         return;
       }
     }
+
+    // All links identified, confirm first pass
+    isFirstPass = true;
   }
 
-  int i = 0;
-  for (auto && segment: this->dataPtr->tendonSegments)
+  const auto segmentCount = this->dataPtr->tendonSegments.size();
+  double sumSegmentLength = 0.0;
+  for (auto i = 0; i < segmentCount; ++i)
   {
+    auto && segment = this->dataPtr->tendonSegments[i];
+
     // Calculate the site position in world coordinates
     math::Pose3d worldPoseLink1 = segment.link1.WorldPose(_ecm).value();
     math::Pose3d worldPoseLink2 = segment.link2.WorldPose(_ecm).value();
@@ -284,8 +318,100 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
 
     // Calculate the force along the tendon directed from site1 to site2
     math::Vector3d r12 = worldPoseSite2.Pos() - worldPoseSite1.Pos();
-    math::Vector3d u12 = r12.Normalize();
+    math::Vector3d u12 = r12.Normalized();
     math::Vector3d f12 = this->dataPtr->tendonForceCmd * u12;
+    math::Vector3d f21 = -1.0 * f12;
+
+    double segmentLength = r12.Length();
+    sumSegmentLength += segmentLength;
+    this->dataPtr->segmentDirs[i] = u12;
+    this->dataPtr->segmentLengths[i] = segmentLength;
+    this->dataPtr->sumSegmentLengths[i] = sumSegmentLength;
+
+    //gzdbg << "r12: " << r12 << std::endl;
+
+    // On first pass also set state for previous step 
+    if (isFirstPass)
+    {
+      this->dataPtr->prevSegmentLengths[i] = segmentLength;
+      this->dataPtr->prevSumSegmentLengths[i] = sumSegmentLength;
+      this->dataPtr->deltaSumSegmentLengths[i] = 0.0;
+    }
+  }
+
+  // Now calculate the changes in the length to the fixed end point.
+  double firstSegmentLength = 0.0;
+  double prevFirstSegmentLength = 0.0;
+  double prevSumSegmentLength = 0.0;
+  if (segmentCount > 0.0)
+  {
+    firstSegmentLength = this->dataPtr->segmentLengths[0];
+    prevFirstSegmentLength = this->dataPtr->prevSegmentLengths[0];
+    prevSumSegmentLength = this->dataPtr->prevSumSegmentLengths.back();
+  }
+  gzdbg << "L: " << sumSegmentLength << std::endl;
+  for (auto i = 0; i < segmentCount; ++i)
+  {
+    // Distance from the start of of each segment to the fixed end point
+    double length = sumSegmentLength +
+        firstSegmentLength - this->dataPtr->sumSegmentLengths[i];
+
+    double prevLength = prevSumSegmentLength +
+        prevFirstSegmentLength - this->dataPtr->prevSumSegmentLengths[i];
+
+    // dL indicates the direction the tendon is moving through the site at
+    // the start of the segment.
+    // dL > 0, the site is moving away from the fixed end (relaxing)
+    // dL < 0, the site is moving towards the fixed end (contracting)
+    double dL = length - prevLength;
+    this->dataPtr->deltaSumSegmentLengths[i] = dL;
+
+    // Cycle
+    this->dataPtr->prevSegmentLengths[i]
+        = this->dataPtr->segmentLengths[i];
+    this->dataPtr->prevSumSegmentLengths[i]
+        = this->dataPtr->sumSegmentLengths[i];
+  }
+  gzdbg << std::endl;
+
+  // Apply forces
+  double cmdForce{0.0};
+  {
+    std::lock_guard<std::mutex> lock(this->dataPtr->tendonForceCmdMutex);
+    cmdForce = this->dataPtr->tendonForceCmd;
+  }
+
+  for (auto i = 0; i < segmentCount; ++i)
+  {
+    auto && segment = this->dataPtr->tendonSegments[i];
+
+    // wrap angle
+    double phi = 0.0;
+    if (i > 0)
+    {
+      math::Vector3d d1 = this->dataPtr->segmentDirs[i - 1];
+      math::Vector3d d2 = this->dataPtr->segmentDirs[i];
+      phi = std::acos(d1.Dot(d2));
+    }
+
+    // direction of tendon movement through site gamma < 1 (contracting)
+    double gamma = sgn(this->dataPtr->deltaSumSegmentLengths[i]);
+
+    // apply capstan formula for scaling tension 
+    double capstanFactor = std::exp(gamma * this->dataPtr->mu * phi);
+    cmdForce *= capstanFactor;
+
+    // Debug
+    gzdbg << "L[" << i << "]: " << this->dataPtr->sumSegmentLengths[i]
+          << ", dL: " << this->dataPtr->deltaSumSegmentLengths[i]
+          << ", gamma: " << gamma
+          << ", phi: " << (phi * 180.0 / M_PI)
+          << ", capstan: " << capstanFactor
+          << ", force: " << cmdForce
+          << std::endl;
+
+    math::Vector3d u12 = this->dataPtr->segmentDirs[i];
+    math::Vector3d f12 = cmdForce * u12;
     math::Vector3d f21 = -1.0 * f12;
 
     // Apply forces at site points in world frame
@@ -293,24 +419,6 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
         segment.site1);
     segment.link2.AddWorldWrench(_ecm, f21, math::Vector3d::Zero,
         segment.site2);
-
-    // Debug - the last n segments
-    //int n = 1;
-    //if (i >= this->dataPtr->tendonSegments.size() - n)
-    //{
-    //  gzdbg << "Link1:          " << segment.link1.Name(_ecm).value()
-    //                              << std::endl;
-    //  gzdbg << "Link2:          " << segment.link2.Name(_ecm).value()
-    //                              << std::endl;
-    //  gzdbg << "worldPoseLink1: " << worldPoseLink1 << std::endl;
-    //  gzdbg << "worldPoseLink2: " << worldPoseLink2 << std::endl;
-    //  gzdbg << "worldPoseSite1: " << worldPoseSite1 << std::endl;
-    //  gzdbg << "worldPoseSite2: " << worldPoseSite2 << std::endl;
-    //  gzdbg << "u12:              " << u12 << std::endl;
-    //  gzdbg << "f12:              " << f12 << std::endl;
-    //  gzdbg << "f21:              " << f21 << std::endl << std::endl;
-    //}
-    i++;
   }
 }
 
