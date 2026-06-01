@@ -2536,6 +2536,7 @@
       name="gz::sim::systems::Tendon">
       <tendon>
         <name>tendon1</name>
+        <mu>0.01</mu>
         <segment>
           <link1>link1</link1>
           <link2>link2</link2>
@@ -2682,6 +2683,7 @@
       name="gz::sim::systems::Tendon">
       <tendon>
         <name>tendon2</name>
+        <mu>0.01</mu>
         <segment>
           <link1>link1</link1>
           <link2>link2</link2>
