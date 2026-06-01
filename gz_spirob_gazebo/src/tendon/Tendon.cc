@@ -160,6 +160,15 @@ void Tendon::Configure(const Entity &_entity,
     return;
   }
 
+  if (sdfTendon->HasElement("mu"))
+  {
+      double mu = sdfTendon->Get<double>("mu");
+      if (mu >= 0.0)
+      {
+        this->dataPtr->mu = mu;
+      }
+  }
+
   auto sdfSegment = sdfTendon->GetElement("segment");
   while (sdfSegment)
   {
