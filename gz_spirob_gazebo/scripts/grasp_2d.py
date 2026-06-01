@@ -2,6 +2,7 @@
 Simple grasping script for 2D SpiRob
 """
 
+import math
 import time
 
 from gz.msgs.double_pb2 import Double
@@ -9,7 +10,24 @@ from gz.msgs.stringmsg_pb2 import StringMsg
 from gz.msgs.vector3d_pb2 import Vector3d
 from gz.transport import Node
 
+def to_polar(x, y):
+    p = math.sqrt(x * x + y * y)
+    # alpha in paper is the angle from the vertical to the target
+    # so exchange x and y to usual angle convention
+    alpha = math.atan2(x, y)
+    return p, alpha
+
+def packing_force(p, alpha):
+    c0 = 14
+    c1 = 13
+    c2 = 5
+    return -c1 * p + c2 * alpha + c0
+
 def main():
+    pos_gz = [0.25, -0.1]
+    x, y = pos_gz[1], pos_gz[0]
+    p, alpha = to_polar(x, y)
+
     model_name = "arm"
     tendon1_name = "tendon1"
     tendon2_name = "tendon2"
@@ -22,14 +40,14 @@ def main():
 
     # durations
     packing_time = 2
-    reaching_time = 4
-    wrapping_time = 4
-    grasping_time = 2
+    reaching_time = 1 * packing_time
+    wrapping_time = 2 * packing_time
+    grasping_time = 1 * packing_time
 
     # forces
-    f_packing = 500
-    f_wrapping = 1.5 * f_packing
-    f_grasping = 1.5 * f_wrapping
+    f_packing = 5 * packing_force(p, alpha)
+    f_wrapping = 2.0 * f_packing
+    f_grasping = 3.0 * f_packing
 
     def reset(sim_time):
         cmd1 = Double()
