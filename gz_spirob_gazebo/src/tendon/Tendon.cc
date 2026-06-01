@@ -92,11 +92,11 @@ class gz::sim::systems::TendonPrivate
 
   /// \brief Track changes in tendon length at each site.
   public: std::vector<math::Vector3d> segmentDirs;
-  public: std::vector<double> segmentLengths;
-  public: std::vector<double> sumSegmentLengths;
-  public: std::vector<double> prevSegmentLengths;
-  public: std::vector<double> prevSumSegmentLengths;
-  public: std::vector<double> deltaSumSegmentLengths;
+  //public: std::vector<double> segmentLengths;
+  //public: std::vector<double> sumSegmentLengths;
+  //public: std::vector<double> prevSegmentLengths;
+  //public: std::vector<double> prevSumSegmentLengths;
+  //public: std::vector<double> deltaSumSegmentLengths;
 
   // AI (ChatGPT)
   public: std::vector<double> T_in;
@@ -106,6 +106,9 @@ class gz::sim::systems::TendonPrivate
 
   /// \brief Friction coefficient.
   public: double mu = 0.1;
+
+  /// \brief Slip activation gain.
+  public: double alpha_scale = 0.1;
 
   /// \brief Model interface
   public: Model model{kNullEntity};
@@ -166,6 +169,15 @@ void Tendon::Configure(const Entity &_entity,
       if (mu >= 0.0)
       {
         this->dataPtr->mu = mu;
+      }
+  }
+
+  if (sdfTendon->HasElement("alpha_scale"))
+  {
+      double alpha_scale = sdfTendon->Get<double>("alpha_scale");
+      if (alpha_scale >= 0.0)
+      {
+        this->dataPtr->alpha_scale = alpha_scale;
       }
   }
 
@@ -237,11 +249,11 @@ void Tendon::Configure(const Entity &_entity,
   // Resize segment workspace
   const auto segmentCount = this->dataPtr->tendonSegments.size();
   this->dataPtr->segmentDirs.resize(segmentCount);
-  this->dataPtr->segmentLengths.resize(segmentCount);
-  this->dataPtr->sumSegmentLengths.resize(segmentCount);
-  this->dataPtr->prevSegmentLengths.resize(segmentCount);
-  this->dataPtr->prevSumSegmentLengths.resize(segmentCount);
-  this->dataPtr->deltaSumSegmentLengths.resize(segmentCount);
+  //this->dataPtr->segmentLengths.resize(segmentCount);
+  //this->dataPtr->sumSegmentLengths.resize(segmentCount);
+  //this->dataPtr->prevSegmentLengths.resize(segmentCount);
+  //this->dataPtr->prevSumSegmentLengths.resize(segmentCount);
+  //this->dataPtr->deltaSumSegmentLengths.resize(segmentCount);
 
   //AI
   this->dataPtr->T_in.resize(segmentCount, 0.0);
@@ -346,8 +358,8 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     double segmentLength = r12.Length();
     sumSegmentLength += segmentLength;
     this->dataPtr->segmentDirs[i] = u12;
-    this->dataPtr->segmentLengths[i] = segmentLength;
-    this->dataPtr->sumSegmentLengths[i] = sumSegmentLength;
+    //this->dataPtr->segmentLengths[i] = segmentLength;
+    //this->dataPtr->sumSegmentLengths[i] = sumSegmentLength;
 
     // AI
     // @TODO add mutex
@@ -357,47 +369,47 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     //gzdbg << "r12: " << r12 << std::endl;
 
     // On first pass also set state for previous step 
-    if (isFirstPass)
-    {
-      this->dataPtr->prevSegmentLengths[i] = segmentLength;
-      this->dataPtr->prevSumSegmentLengths[i] = sumSegmentLength;
-      this->dataPtr->deltaSumSegmentLengths[i] = 0.0;
-    }
+    //if (isFirstPass)
+    //{
+    //  this->dataPtr->prevSegmentLengths[i] = segmentLength;
+    //  this->dataPtr->prevSumSegmentLengths[i] = sumSegmentLength;
+    //  this->dataPtr->deltaSumSegmentLengths[i] = 0.0;
+    //}
   }
 
   // Now calculate the changes in the length to the fixed end point.
-  double firstSegmentLength = 0.0;
-  double prevFirstSegmentLength = 0.0;
-  double prevSumSegmentLength = 0.0;
-  if (segmentCount > 0.0)
-  {
-    firstSegmentLength = this->dataPtr->segmentLengths[0];
-    prevFirstSegmentLength = this->dataPtr->prevSegmentLengths[0];
-    prevSumSegmentLength = this->dataPtr->prevSumSegmentLengths.back();
-  }
+  //double firstSegmentLength = 0.0;
+  //double prevFirstSegmentLength = 0.0;
+  //double prevSumSegmentLength = 0.0;
+  //if (segmentCount > 0.0)
+  //{
+  //  firstSegmentLength = this->dataPtr->segmentLengths[0];
+  //  prevFirstSegmentLength = this->dataPtr->prevSegmentLengths[0];
+  //  prevSumSegmentLength = this->dataPtr->prevSumSegmentLengths.back();
+  //}
   //gzdbg << "L: " << sumSegmentLength << std::endl;
-  for (auto i = 0; i < segmentCount; ++i)
-  {
+  //for (auto i = 0; i < segmentCount; ++i)
+  //{
     // Distance from the start of of each segment to the fixed end point
-    double length = sumSegmentLength +
-        firstSegmentLength - this->dataPtr->sumSegmentLengths[i];
+    //double length = sumSegmentLength +
+    //    firstSegmentLength - this->dataPtr->sumSegmentLengths[i];
 
-    double prevLength = prevSumSegmentLength +
-        prevFirstSegmentLength - this->dataPtr->prevSumSegmentLengths[i];
+    //double prevLength = prevSumSegmentLength +
+    //    prevFirstSegmentLength - this->dataPtr->prevSumSegmentLengths[i];
 
     // dL indicates the direction the tendon is moving through the site at
     // the start of the segment.
     // dL > 0, the site is moving away from the fixed end (relaxing)
     // dL < 0, the site is moving towards the fixed end (contracting)
-    double dL = length - prevLength;
-    this->dataPtr->deltaSumSegmentLengths[i] = dL;
+    //double dL = length - prevLength;
+    //this->dataPtr->deltaSumSegmentLengths[i] = dL;
 
     // Cycle
-    this->dataPtr->prevSegmentLengths[i]
-        = this->dataPtr->segmentLengths[i];
-    this->dataPtr->prevSumSegmentLengths[i]
-        = this->dataPtr->sumSegmentLengths[i];
-  }
+    //this->dataPtr->prevSegmentLengths[i]
+    //    = this->dataPtr->segmentLengths[i];
+    //this->dataPtr->prevSumSegmentLengths[i]
+    //    = this->dataPtr->sumSegmentLengths[i];
+  //}
   //gzdbg << std::endl;
 
   // Apply forces
@@ -455,6 +467,7 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     T0_cmd = this->dataPtr->tendonForceCmd;
   }
 
+  // TODO must check segmentCount > 0 or short circult update.
   // Boundary condition (actuator side)
   this->dataPtr->T_in[0] = T0_cmd;
 
@@ -462,7 +475,7 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
   {
     auto &segment = this->dataPtr->tendonSegments[i];
 
-    // wrap angle
+    //// wrap angle
     double phi = 0.0;
     if (i > 0)
     {
@@ -471,47 +484,83 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
       phi = std::acos(std::clamp(d1.Dot(d2), -1.0, 1.0));
     }
 
+    //double Tin = this->dataPtr->T_in[i];
+
+    //// capstan bounds
+    //double Tmin = Tin * std::exp(-this->dataPtr->mu * phi);
+    //double Tmax = Tin * std::exp(+this->dataPtr->mu * phi);
+
+    //double Told = this->dataPtr->T_out[i];
+
+    //// predicted sliding update (direction from previous step)
+    //double Tpred = Tin * std::exp(this->dataPtr->mu * phi *
+    //                              (Told >= Tin ? 1.0 : -1.0));
+
+    //// --- stick-slip decision ---
+    //bool stick = (Told >= Tmin && Told <= Tmax);
+
+    //double Tout;
+
+    //if (stick)
+    //{
+    //  // STICK: preserve previous state
+    //  Tout = Told;
+    //  this->dataPtr->sliding[i] = false;
+    //}
+    //else
+    //{
+    //  // SLIP: project onto capstan boundary
+    //  if (Told < Tmin)
+    //    Tout = Tmin;
+    //  else
+    //    Tout = Tmax;
+
+    //  this->dataPtr->sliding[i] = true;
+    //}
+
+    //this->dataPtr->T_out[i] = Tout;
+
+    //// propagate to next segment
+    //if (i + 1 < segmentCount)
+    //{
+    //  this->dataPtr->T_in[i + 1] = Tout;
+    //}
+
     double Tin = this->dataPtr->T_in[i];
-
-    // capstan bounds
-    double Tmin = Tin * std::exp(-this->dataPtr->mu * phi);
-    double Tmax = Tin * std::exp(+this->dataPtr->mu * phi);
-
     double Told = this->dataPtr->T_out[i];
 
-    // predicted sliding update (direction from previous step)
-    double Tpred = Tin * std::exp(this->dataPtr->mu * phi *
-                                  (Told >= Tin ? 1.0 : -1.0));
+    double mu = this->dataPtr->mu;
+    double Tmin = Tin * exp(-mu * phi);
+    double Tmax = Tin * exp(+mu * phi);
 
-    // --- stick-slip decision ---
-    bool stick = (Told >= Tmin && Told <= Tmax);
+    // state-based direction
+    double sigma = (Told >= Tin) ? 1.0 : -1.0;
 
-    double Tout;
+    // capstan target
+    double Tbias = Tin * exp(sigma * mu * phi);
 
-    if (stick)
-    {
-      // STICK: preserve previous state
-      Tout = Told;
-      this->dataPtr->sliding[i] = false;
-    }
-    else
-    {
-      // SLIP: project onto capstan boundary
-      if (Told < Tmin)
-        Tout = Tmin;
-      else
-        Tout = Tmax;
+    // propose update
+    double Ttrial = Tbias;
 
-      this->dataPtr->sliding[i] = true;
-    }
+    // compute violation
+    double violation = 0.0;
+    if (Ttrial < Tmin)
+        violation = (Tmin - Ttrial) / Tmin;
+    else if (Ttrial > Tmax)
+        violation = (Ttrial - Tmax) / Tmax;
+
+    // alpha mapping
+    double alpha_scale = this->dataPtr->alpha_scale;
+    double alpha = 1.0 - std::exp(-violation / alpha_scale);
+
+    // blend
+    double Tblend = (1.0 - alpha) * Told + alpha * Ttrial;
+
+    // project
+    double Tout = std::clamp(Tblend, Tmin, Tmax);
 
     this->dataPtr->T_out[i] = Tout;
-
-    // propagate to next segment
-    if (i + 1 < segmentCount)
-    {
-      this->dataPtr->T_in[i + 1] = Tout;
-    }
+    this->dataPtr->T_in[i+1] = Tout;
 
     // direction for wrench
     math::Vector3d u12 = this->dataPtr->segmentDirs[i];

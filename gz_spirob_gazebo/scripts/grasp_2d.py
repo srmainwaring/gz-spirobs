@@ -39,13 +39,13 @@ def main():
     tendon2_pub = node.advertise(tendon2_topic, Double)
 
     # durations
-    packing_time = 2
+    packing_time = 4
     reaching_time = 1 * packing_time
     wrapping_time = 2 * packing_time
     grasping_time = 1 * packing_time
 
     # forces
-    f_packing = 5 * packing_force(p, alpha)
+    f_packing = 10 * packing_force(p, alpha)
     f_wrapping = 2.0 * f_packing
     f_grasping = 3.0 * f_packing
 
