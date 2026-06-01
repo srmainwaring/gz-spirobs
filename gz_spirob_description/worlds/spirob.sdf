@@ -94,7 +94,8 @@
 
     <!-- cylinder target -->
     <model name="target">
-      <pose>0.25 -0.1 0.05 0 0 0</pose>
+      <static>true</static>
+      <pose>0.3 -0.1 0.05 0 0 0</pose>
       <link name="base_link">
         <inertial auto="true" />
         <collision name="collision">

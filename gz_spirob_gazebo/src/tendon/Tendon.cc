@@ -19,6 +19,8 @@
 
 #include <gz/msgs/double.pb.h>
 
+#include <algorithm>
+#include <cmath>
 #include <string>
 #include <thread>
 #include <vector>
@@ -69,17 +71,38 @@ class gz::sim::systems::TendonPrivate
   public: void OnCmdForce(const msgs::Double &_msg);
 
   /// \brief Tendon name
-  // @todo remove hardcode
   public: std::string tendonName;
 
   /// \brief Commanded force
-  public: double tendonForceCmd;
+  public: double tendonForceCmd{0.0};
+
+  /// \brief Max tendon tension
+  public: double maxForce{1000.0};
+
+  /// \brief Stiffness resisting length increasing past max length
+  public: double holdStiffness{4000.0};
+
+  /// \brief Shortest total tendon length
+  public: double lockLength{-1.0};
+
+  /// \brief Capstan friction coefficient.
+  public: double mu{0.0};
+
+  /// \brief Previous step tension for rate limiting
+  public: double lastTension{-1.0};
 
   /// \brief mutex to protect tendonForceCmd
   public: std::mutex tendonForceCmdMutex;
 
   /// \brief A list of the segments comprising the tendon.
   public: std::vector<TendonSegment> tendonSegments;
+
+  /// \brief Cached segments unit vectors
+  public: std::vector<math::Vector3d> segmentDirs;
+
+  /// \brief Segment tensions
+  public: std::vector<double> segmentTensions;
+
   /// \brief Set to true when all tendon segments are initialised.
   public: bool isValid = false;
 
@@ -134,6 +157,33 @@ void Tendon::Configure(const Entity &_entity,
   {
     gzerr << "<name> provided but is empty." << std::endl;
     return;
+  }
+
+  if (sdfTendon->HasElement("max_force"))
+  {
+    double maxForce = sdfTendon->Get<double>("max_force");
+    if (maxForce > 0.0)
+    {
+      this->dataPtr->maxForce = maxForce;
+    }
+  }
+
+  if (sdfTendon->HasElement("hold_stiffness"))
+  {
+    double holdStiffness = sdfTendon->Get<double>("hold_stiffness");
+    if (holdStiffness >= 0.0)
+    {
+      this->dataPtr->holdStiffness = holdStiffness;
+    }
+  }
+
+  if (sdfTendon->HasElement("mu"))
+  {
+    double mu = sdfTendon->Get<double>("mu");
+    if (mu >= 0.0)
+    {
+      this->dataPtr->mu = mu;
+    }
   }
 
   auto sdfSegment = sdfTendon->GetElement("segment");
@@ -201,6 +251,11 @@ void Tendon::Configure(const Entity &_entity,
     gzdbg << "site2:          " << segment.site2 << std::endl << std::endl;
   }
 
+  // Resize segment workspace
+  const auto segmentCount = this->dataPtr->tendonSegments.size();
+  this->dataPtr->segmentDirs.resize(segmentCount, math::Vector3d::Zero);
+  this->dataPtr->segmentTensions.resize(segmentCount, 0.0);
+
   // Subscribe to commands
   auto topic = transport::TopicUtils::AsValidTopic("/model/" +
       this->dataPtr->model.Name(_ecm) + "/tendon/" + this->dataPtr->tendonName +
@@ -267,9 +322,27 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     }
   }
 
-  int i = 0;
-  for (auto && segment: this->dataPtr->tendonSegments)
+  double cmdForce;
   {
+    std::lock_guard<std::mutex> lock(this->dataPtr->tendonForceCmdMutex);
+    cmdForce = this->dataPtr->tendonForceCmd;
+  }
+  if (!std::isfinite(cmdForce) || cmdForce <= 0.0)
+  {
+    // Released
+    this->dataPtr->lockLength = -1.0;
+    this->dataPtr->lastTension = -1.0;
+    return;
+  }
+  cmdForce = std::min(cmdForce, this->dataPtr->maxForce);
+
+  auto &segments = this->dataPtr->tendonSegments;
+  auto &dirs = this->dataPtr->segmentDirs;
+
+  double totalLength = 0.0;
+  for (size_t i = 0; i < segments.size(); ++i)
+  {
+    auto &segment = segments[i];
     // Calculate the site position in world coordinates
     math::Pose3d worldPoseLink1 = segment.link1.WorldPose(_ecm).value();
     math::Pose3d worldPoseLink2 = segment.link2.WorldPose(_ecm).value();
@@ -284,8 +357,69 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
 
     // Calculate the force along the tendon directed from site1 to site2
     math::Vector3d r12 = worldPoseSite2.Pos() - worldPoseSite1.Pos();
-    math::Vector3d u12 = r12.Normalize();
-    math::Vector3d f12 = this->dataPtr->tendonForceCmd * u12;
+    double segmentLength = r12.Length();
+    totalLength += segmentLength;
+
+    if (segmentLength >= 1e-9)
+    {
+      dirs[i] = r12.Normalize();
+    }
+    else
+    {
+      dirs[i] = math::Vector3d::Zero;
+    }
+  }
+
+  if (this->dataPtr->lockLength < 0.0 ||
+      totalLength < this->dataPtr->lockLength)
+  {
+    this->dataPtr->lockLength = totalLength;
+  }
+
+  double extension = totalLength - this->dataPtr->lockLength;
+  double tension = cmdForce;
+  if (extension > 0.0)
+  {
+    tension += this->dataPtr->holdStiffness * extension;
+  }
+  tension = std::min(tension, this->dataPtr->maxForce);
+
+  const double dt = std::chrono::duration<double>(_info.dt).count();
+  if (dt > 0.0 && this->dataPtr->lastTension >= 0.0)
+  {
+    const double maxDelta = this->dataPtr->maxForce * 50.0 * dt;
+    tension = std::clamp(tension,
+        this->dataPtr->lastTension - maxDelta,
+        this->dataPtr->lastTension + maxDelta);
+  }
+  this->dataPtr->lastTension = tension;
+
+  for (size_t i = 0; i < segments.size(); ++i)
+  {
+    auto &segment = segments[i];
+
+    // capstan friction propagates tension from proximal to distal end
+    if (i > 0)
+    {
+      // friction coefficient
+      double mu = this->dataPtr->mu;
+
+      // wrap angle
+      math::Vector3d d1 = this->dataPtr->segmentDirs[i - 1];
+      math::Vector3d d2 = this->dataPtr->segmentDirs[i];
+      double phi = std::acos(std::clamp(d1.Dot(d2), -1.0, 1.0));
+
+      // slip direction, positive is towards the proximal end (contraction)
+      double tensionIn = this->dataPtr->segmentTensions[i - 1];
+      double tensionOut = this->dataPtr->segmentTensions[i];
+      double gamma = (tensionIn >= tensionOut) ? 1.0 : -1.0;
+
+      // modified tension
+      tension = tensionIn * std::exp(-1.0 * mu * phi * gamma);
+    }
+    this->dataPtr->segmentTensions[i] = tension;
+
+    math::Vector3d f12 = tension * dirs[i];
     math::Vector3d f21 = -1.0 * f12;
 
     // Apply forces at site points in world frame
@@ -294,23 +428,8 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     segment.link2.AddWorldWrench(_ecm, f21, math::Vector3d::Zero,
         segment.site2);
 
-    // Debug - the last n segments
-    //int n = 1;
-    //if (i >= this->dataPtr->tendonSegments.size() - n)
-    //{
-    //  gzdbg << "Link1:          " << segment.link1.Name(_ecm).value()
-    //                              << std::endl;
-    //  gzdbg << "Link2:          " << segment.link2.Name(_ecm).value()
-    //                              << std::endl;
-    //  gzdbg << "worldPoseLink1: " << worldPoseLink1 << std::endl;
-    //  gzdbg << "worldPoseLink2: " << worldPoseLink2 << std::endl;
-    //  gzdbg << "worldPoseSite1: " << worldPoseSite1 << std::endl;
-    //  gzdbg << "worldPoseSite2: " << worldPoseSite2 << std::endl;
-    //  gzdbg << "u12:              " << u12 << std::endl;
-    //  gzdbg << "f12:              " << f12 << std::endl;
-    //  gzdbg << "f21:              " << f21 << std::endl << std::endl;
-    //}
-    i++;
+    // Debug
+    //gzmsg << "T[" << i << "] " << tension << std::endl;
   }
 }
 
