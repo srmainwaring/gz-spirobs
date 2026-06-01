@@ -14,6 +14,14 @@
             <size>0.1 0.1 0.1</size>
           </box>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -47,6 +55,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -153,6 +169,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -259,6 +283,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -287,6 +319,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -315,6 +355,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -343,6 +391,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -371,6 +427,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -399,6 +463,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -427,6 +499,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -455,6 +535,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -483,6 +571,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -511,6 +607,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -539,6 +643,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -567,6 +679,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -595,6 +715,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -623,6 +751,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -651,6 +787,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -679,6 +823,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -707,6 +859,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -735,6 +895,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -763,6 +931,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -791,6 +967,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -819,6 +1003,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -847,6 +1039,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -875,6 +1075,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -903,6 +1111,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -931,6 +1147,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -959,6 +1183,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -987,6 +1219,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1015,6 +1255,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1043,6 +1291,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1071,6 +1327,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1099,6 +1363,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1127,6 +1399,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1155,6 +1435,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1183,6 +1471,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1211,6 +1507,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1239,6 +1543,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1267,6 +1579,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1295,6 +1615,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1323,6 +1651,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
@@ -1351,6 +1687,14 @@
             <uri>meshes/baselink.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="visual">
         <pose degrees="true">0 0 0 0 0 0</pose>
