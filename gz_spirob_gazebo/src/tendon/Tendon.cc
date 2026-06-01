@@ -19,6 +19,8 @@
 
 #include <gz/msgs/double.pb.h>
 
+#include <algorithm>
+#include <cmath>
 #include <string>
 #include <thread>
 #include <vector>
@@ -73,13 +75,24 @@ class gz::sim::systems::TendonPrivate
   public: std::string tendonName;
 
   /// \brief Commanded force
-  public: double tendonForceCmd;
+  public: double tendonForceCmd{0.0};
+
+  /// \brief Max tendon tension
+  public: double maxForce{1000.0};
+
+  /// \brief Stiffness resisting length increasing past max length
+  public: double holdStiffness{4000.0};
+
+  /// \brief Shortest total tendon length
+  public: double lockLength{-1.0};
 
   /// \brief mutex to protect tendonForceCmd
   public: std::mutex tendonForceCmdMutex;
 
   /// \brief A list of the segments comprising the tendon.
   public: std::vector<TendonSegment> tendonSegments;
+  /// \brief Cached segments unit vectrs
+  public: std::vector<math::Vector3d> segmentDirs;
   /// \brief Set to true when all tendon segments are initialised.
   public: bool isValid = false;
 
@@ -134,6 +147,24 @@ void Tendon::Configure(const Entity &_entity,
   {
     gzerr << "<name> provided but is empty." << std::endl;
     return;
+  }
+
+  if (sdfTendon->HasElement("max_force"))
+  {
+    double maxForce = sdfTendon->Get<double>("max_force");
+    if (maxForce > 0.0)
+    {
+      this->dataPtr->maxForce = maxForce;
+    }
+  }
+
+  if (sdfTendon->HasElement("hold_stiffness"))
+  {
+    double holdStiffness = sdfTendon->Get<double>("hold_stiffness");
+    if (holdStiffness >= 0.0)
+    {
+      this->dataPtr->holdStiffness = holdStiffness;
+    }
   }
 
   auto sdfSegment = sdfTendon->GetElement("segment");
@@ -201,6 +232,9 @@ void Tendon::Configure(const Entity &_entity,
     gzdbg << "site2:          " << segment.site2 << std::endl << std::endl;
   }
 
+  this->dataPtr->segmentDirs.resize(this->dataPtr->tendonSegments.size(),
+      math::Vector3d::Zero);
+
   // Subscribe to commands
   auto topic = transport::TopicUtils::AsValidTopic("/model/" +
       this->dataPtr->model.Name(_ecm) + "/tendon/" + this->dataPtr->tendonName +
@@ -267,9 +301,26 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     }
   }
 
-  int i = 0;
-  for (auto && segment: this->dataPtr->tendonSegments)
+  double cmdForce;
   {
+    std::lock_guard<std::mutex> lock(this->dataPtr->tendonForceCmdMutex);
+    cmdForce = this->dataPtr->tendonForceCmd;
+  }
+  if (!std::isfinite(cmdForce) || cmdForce <= 0.0)
+  {
+    // Released
+    this->dataPtr->lockLength = -1.0;
+    return;
+  }
+  cmdForce = std::min(cmdForce, this->dataPtr->maxForce);
+
+  auto &segments = this->dataPtr->tendonSegments;
+  auto &dirs = this->dataPtr->segmentDirs;
+
+  double totalLength = 0.0;
+  for (size_t i = 0; i < segments.size(); ++i)
+  {
+    auto &segment = segments[i];
     // Calculate the site position in world coordinates
     math::Pose3d worldPoseLink1 = segment.link1.WorldPose(_ecm).value();
     math::Pose3d worldPoseLink2 = segment.link2.WorldPose(_ecm).value();
@@ -284,8 +335,37 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
 
     // Calculate the force along the tendon directed from site1 to site2
     math::Vector3d r12 = worldPoseSite2.Pos() - worldPoseSite1.Pos();
-    math::Vector3d u12 = r12.Normalize();
-    math::Vector3d f12 = this->dataPtr->tendonForceCmd * u12;
+    double segmentLength = r12.Length();
+    totalLength += segmentLength;
+
+    if (segmentLength >= 1e-9)
+    {
+      dirs[i] = r12.Normalize();
+    }
+    else
+    {
+      dirs[i] = math::Vector3d::Zero;
+    }
+  }
+
+  if (this->dataPtr->lockLength < 0.0 ||
+      totalLength < this->dataPtr->lockLength)
+  {
+    this->dataPtr->lockLength = totalLength;
+  }
+
+  double extension = totalLength - this->dataPtr->lockLength;
+  double tension = cmdForce;
+  if (extension > 0.0)
+  {
+    tension += this->dataPtr->holdStiffness * extension;
+  }
+  tension = std::min(tension, this->dataPtr->maxForce);
+
+  for (size_t i = 0; i < segments.size(); ++i)
+  {
+    auto &segment = segments[i];
+    math::Vector3d f12 = tension * dirs[i];
     math::Vector3d f21 = -1.0 * f12;
 
     // Apply forces at site points in world frame
