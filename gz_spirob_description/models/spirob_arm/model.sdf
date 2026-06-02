@@ -2537,7 +2537,7 @@
       <tendon>
         <name>tendon1</name>
         <max_force>2000.0</max_force>
-        <hold_stiffness>4000.0</hold_stiffness>
+        <hold_stiffness>2500.0</hold_stiffness>
         <segment>
           <link1>link1</link1>
           <link2>link2</link2>
@@ -2685,7 +2685,7 @@
       <tendon>
         <name>tendon2</name>
         <max_force>2000.0</max_force>
-        <hold_stiffness>4000.0</hold_stiffness>
+        <hold_stiffness>2500.0</hold_stiffness>
         <segment>
           <link1>link1</link1>
           <link2>link2</link2>

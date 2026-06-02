@@ -86,6 +86,9 @@ class gz::sim::systems::TendonPrivate
   /// \brief Shortest total tendon length
   public: double lockLength{-1.0};
 
+  /// \brief Previous step tension for rate limiting
+  public: double lastTension{-1.0};
+
   /// \brief mutex to protect tendonForceCmd
   public: std::mutex tendonForceCmdMutex;
 
@@ -310,6 +313,7 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
   {
     // Released
     this->dataPtr->lockLength = -1.0;
+    this->dataPtr->lastTension = -1.0;
     return;
   }
   cmdForce = std::min(cmdForce, this->dataPtr->maxForce);
@@ -362,6 +366,16 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
   }
   tension = std::min(tension, this->dataPtr->maxForce);
 
+  const double dt = std::chrono::duration<double>(_info.dt).count();
+  if (dt > 0.0 && this->dataPtr->lastTension >= 0.0)
+  {
+    const double maxDelta = this->dataPtr->maxForce * 50.0 * dt;
+    tension = std::clamp(tension,
+        this->dataPtr->lastTension - maxDelta,
+        this->dataPtr->lastTension + maxDelta);
+  }
+  this->dataPtr->lastTension = tension;
+
   for (size_t i = 0; i < segments.size(); ++i)
   {
     auto &segment = segments[i];
@@ -390,7 +404,6 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     //  gzdbg << "f12:              " << f12 << std::endl;
     //  gzdbg << "f21:              " << f21 << std::endl << std::endl;
     //}
-    i++;
   }
 }
 
