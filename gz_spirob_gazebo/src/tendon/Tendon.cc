@@ -76,7 +76,6 @@ class gz::sim::systems::TendonPrivate
   public: void OnCmdForce(const msgs::Double &_msg);
 
   /// \brief Tendon name
-  // @todo remove hardcode
   public: std::string tendonName;
 
   /// \brief Commanded force
@@ -92,11 +91,6 @@ class gz::sim::systems::TendonPrivate
 
   /// \brief Track changes in tendon length at each site.
   public: std::vector<math::Vector3d> segmentDirs;
-  //public: std::vector<double> segmentLengths;
-  //public: std::vector<double> sumSegmentLengths;
-  //public: std::vector<double> prevSegmentLengths;
-  //public: std::vector<double> prevSumSegmentLengths;
-  //public: std::vector<double> deltaSumSegmentLengths;
 
   // AI (ChatGPT)
   public: std::vector<double> T_in;
@@ -249,11 +243,6 @@ void Tendon::Configure(const Entity &_entity,
   // Resize segment workspace
   const auto segmentCount = this->dataPtr->tendonSegments.size();
   this->dataPtr->segmentDirs.resize(segmentCount);
-  //this->dataPtr->segmentLengths.resize(segmentCount);
-  //this->dataPtr->sumSegmentLengths.resize(segmentCount);
-  //this->dataPtr->prevSegmentLengths.resize(segmentCount);
-  //this->dataPtr->prevSumSegmentLengths.resize(segmentCount);
-  //this->dataPtr->deltaSumSegmentLengths.resize(segmentCount);
 
   //AI
   this->dataPtr->T_in.resize(segmentCount, 0.0);
@@ -298,7 +287,6 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     return;
 
   // If the links have not been identified, look for them
-  bool isFirstPass = false;
   if (!this->dataPtr->isValid)
   {
     for (auto && segment: this->dataPtr->tendonSegments)
@@ -326,9 +314,6 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
         return;
       }
     }
-
-    // All links identified, confirm first pass
-    isFirstPass = true;
   }
 
   const auto segmentCount = this->dataPtr->tendonSegments.size();
@@ -358,108 +343,14 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
     double segmentLength = r12.Length();
     sumSegmentLength += segmentLength;
     this->dataPtr->segmentDirs[i] = u12;
-    //this->dataPtr->segmentLengths[i] = segmentLength;
-    //this->dataPtr->sumSegmentLengths[i] = sumSegmentLength;
 
     // AI
     // @TODO add mutex
     this->dataPtr->T_in[0] = this->dataPtr->tendonForceCmd;
     this->dataPtr->T_out[0] = this->dataPtr->tendonForceCmd;
-
-    //gzdbg << "r12: " << r12 << std::endl;
-
-    // On first pass also set state for previous step 
-    //if (isFirstPass)
-    //{
-    //  this->dataPtr->prevSegmentLengths[i] = segmentLength;
-    //  this->dataPtr->prevSumSegmentLengths[i] = sumSegmentLength;
-    //  this->dataPtr->deltaSumSegmentLengths[i] = 0.0;
-    //}
   }
-
-  // Now calculate the changes in the length to the fixed end point.
-  //double firstSegmentLength = 0.0;
-  //double prevFirstSegmentLength = 0.0;
-  //double prevSumSegmentLength = 0.0;
-  //if (segmentCount > 0.0)
-  //{
-  //  firstSegmentLength = this->dataPtr->segmentLengths[0];
-  //  prevFirstSegmentLength = this->dataPtr->prevSegmentLengths[0];
-  //  prevSumSegmentLength = this->dataPtr->prevSumSegmentLengths.back();
-  //}
-  //gzdbg << "L: " << sumSegmentLength << std::endl;
-  //for (auto i = 0; i < segmentCount; ++i)
-  //{
-    // Distance from the start of of each segment to the fixed end point
-    //double length = sumSegmentLength +
-    //    firstSegmentLength - this->dataPtr->sumSegmentLengths[i];
-
-    //double prevLength = prevSumSegmentLength +
-    //    prevFirstSegmentLength - this->dataPtr->prevSumSegmentLengths[i];
-
-    // dL indicates the direction the tendon is moving through the site at
-    // the start of the segment.
-    // dL > 0, the site is moving away from the fixed end (relaxing)
-    // dL < 0, the site is moving towards the fixed end (contracting)
-    //double dL = length - prevLength;
-    //this->dataPtr->deltaSumSegmentLengths[i] = dL;
-
-    // Cycle
-    //this->dataPtr->prevSegmentLengths[i]
-    //    = this->dataPtr->segmentLengths[i];
-    //this->dataPtr->prevSumSegmentLengths[i]
-    //    = this->dataPtr->sumSegmentLengths[i];
-  //}
-  //gzdbg << std::endl;
 
   // Apply forces
-#if 0
-  double cmdForce{0.0};
-  {
-    std::lock_guard<std::mutex> lock(this->dataPtr->tendonForceCmdMutex);
-    cmdForce = this->dataPtr->tendonForceCmd;
-  }
-
-  for (auto i = 0; i < segmentCount; ++i)
-  {
-    auto && segment = this->dataPtr->tendonSegments[i];
-
-    // wrap angle
-    double phi = 0.0;
-    if (i > 0)
-    {
-      math::Vector3d d1 = this->dataPtr->segmentDirs[i - 1];
-      math::Vector3d d2 = this->dataPtr->segmentDirs[i];
-      phi = std::acos(d1.Dot(d2));
-    }
-
-    // direction of tendon movement through site gamma < 1 (contracting)
-    double gamma = sgn(this->dataPtr->deltaSumSegmentLengths[i]);
-
-    // apply capstan formula for scaling tension 
-    double capstanFactor = std::exp(gamma * this->dataPtr->mu * phi);
-    cmdForce *= capstanFactor;
-
-    // Debug
-    gzdbg << "L[" << i << "]: " << this->dataPtr->sumSegmentLengths[i]
-          << ", dL: " << this->dataPtr->deltaSumSegmentLengths[i]
-          << ", gamma: " << gamma
-          << ", phi: " << (phi * 180.0 / M_PI)
-          << ", capstan: " << capstanFactor
-          << ", force: " << cmdForce
-          << std::endl;
-
-    math::Vector3d u12 = this->dataPtr->segmentDirs[i];
-    math::Vector3d f12 = cmdForce * u12;
-    math::Vector3d f21 = -1.0 * f12;
-
-    // Apply forces at site points in world frame
-    segment.link1.AddWorldWrench(_ecm, f12, math::Vector3d::Zero,
-        segment.site1);
-    segment.link2.AddWorldWrench(_ecm, f21, math::Vector3d::Zero,
-        segment.site2);
-  }
-#endif
   // AI
   double T0_cmd;
   {
@@ -483,48 +374,6 @@ void Tendon::PreUpdate(const UpdateInfo &_info,
       math::Vector3d d2 = this->dataPtr->segmentDirs[i];
       phi = std::acos(std::clamp(d1.Dot(d2), -1.0, 1.0));
     }
-
-    //double Tin = this->dataPtr->T_in[i];
-
-    //// capstan bounds
-    //double Tmin = Tin * std::exp(-this->dataPtr->mu * phi);
-    //double Tmax = Tin * std::exp(+this->dataPtr->mu * phi);
-
-    //double Told = this->dataPtr->T_out[i];
-
-    //// predicted sliding update (direction from previous step)
-    //double Tpred = Tin * std::exp(this->dataPtr->mu * phi *
-    //                              (Told >= Tin ? 1.0 : -1.0));
-
-    //// --- stick-slip decision ---
-    //bool stick = (Told >= Tmin && Told <= Tmax);
-
-    //double Tout;
-
-    //if (stick)
-    //{
-    //  // STICK: preserve previous state
-    //  Tout = Told;
-    //  this->dataPtr->sliding[i] = false;
-    //}
-    //else
-    //{
-    //  // SLIP: project onto capstan boundary
-    //  if (Told < Tmin)
-    //    Tout = Tmin;
-    //  else
-    //    Tout = Tmax;
-
-    //  this->dataPtr->sliding[i] = true;
-    //}
-
-    //this->dataPtr->T_out[i] = Tout;
-
-    //// propagate to next segment
-    //if (i + 1 < segmentCount)
-    //{
-    //  this->dataPtr->T_in[i + 1] = Tout;
-    //}
 
     double Tin = this->dataPtr->T_in[i];
     double Told = this->dataPtr->T_out[i];
