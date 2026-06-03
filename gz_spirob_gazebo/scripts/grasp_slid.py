@@ -21,6 +21,7 @@ class TendonGui:
         self.model_name = "arm"
         self.tendon1_name = "tendon1"
         self.tendon2_name = "tendon2"
+        self.tendon3_name = "tendon3"
 
         self.node = Node()
         self.tendon1_topic = (
@@ -29,8 +30,12 @@ class TendonGui:
         self.tendon2_topic = (
             f"/model/{self.model_name}/tendon/{self.tendon2_name}/cmd_force"
         )
+        self.tendon3_topic = (
+            f"/model/{self.model_name}/tendon/{self.tendon3_name}/cmd_force"
+        )
         self.tendon1_pub = self.node.advertise(self.tendon1_topic, Double)
         self.tendon2_pub = self.node.advertise(self.tendon2_topic, Double)
+        self.tendon3_pub = self.node.advertise(self.tendon3_topic, Double)
 
         self.root = tk.Tk()
         self.root.title("SpiRob Tendon Control")
@@ -39,8 +44,10 @@ class TendonGui:
 
         self.force_1_var = tk.DoubleVar(value=0.0)
         self.force_2_var = tk.DoubleVar(value=0.0)
+        self.force_3_var = tk.DoubleVar(value=0.0)
         self.value_1_var = tk.StringVar(value="0.00 N")
         self.value_2_var = tk.StringVar(value="0.00 N")
+        self.value_3_var = tk.StringVar(value="0.00 N")
         self.stream_enabled = tk.BooleanVar(value=False)
         self.status_var = tk.StringVar(value="Ready")
 
@@ -49,6 +56,9 @@ class TendonGui:
         )
         self.force_2_var.trace_add(
             "write", lambda *_: self._update_label(self.force_2_var, self.value_2_var)
+        )
+        self.force_3_var.trace_add(
+            "write", lambda *_: self._update_label(self.force_3_var, self.value_3_var)
         )
 
         self._build_ui()
@@ -69,6 +79,9 @@ class TendonGui:
         )
         self._add_tendon_controls(
             frame, "Tendon 2 (right / F2)", self.force_2_var, self.value_2_var
+        )
+        self._add_tendon_controls(
+            frame, "Tendon 3 (mid / F3)", self.force_3_var, self.value_3_var
         )
 
         button_row = ttk.Frame(frame)
@@ -127,22 +140,28 @@ class TendonGui:
             return 0.0
         return max(FORCE_MIN, min(FORCE_MAX, value))
 
-    def _publish(self, force_1, force_2, label):
+    def _publish(self, force_1, force_2, force_3, label):
         cmd1 = Double()
         cmd1.data = float(force_1)
         cmd2 = Double()
         cmd2.data = float(force_2)
+        cmd3 = Double()
+        cmd3.data = float(force_3)
 
         self.tendon1_pub.publish(cmd1)
         self.tendon2_pub.publish(cmd2)
+        self.tendon3_pub.publish(cmd3)
 
         self.status_var.set(
-            f"{label}: F1={cmd1.data:.1f} N, F2={cmd2.data:.1f} N"
+            f"{label}: F1={cmd1.data:.1f} N, F2={cmd2.data:.1f}, F3={cmd3.data:.1f} N"
         )
 
     def publish_now(self):
         self._publish(
-            self._read(self.force_1_var), self._read(self.force_2_var), "Sent"
+            self._read(self.force_1_var),
+            self._read(self.force_2_var),
+            self._read(self.force_3_var),
+            "Sent"
         )
 
     def _handle_stream_toggle(self):
@@ -156,7 +175,10 @@ class TendonGui:
         if not self.stream_enabled.get():
             return
         self._publish(
-            self._read(self.force_1_var), self._read(self.force_2_var), "Streaming"
+            self._read(self.force_1_var),
+            self._read(self.force_2_var),
+            self._read(self.force_3_var),
+            "Streaming"
         )
         self.root.after(TICK_MS, self._stream_loop)
 
@@ -164,12 +186,13 @@ class TendonGui:
         self.stream_enabled.set(False)
         self.force_1_var.set(0.0)
         self.force_2_var.set(0.0)
-        self._publish(0.0, 0.0, "Reset")
+        self.force_3_var.set(0.0)
+        self._publish(0.0, 0.0, 0.0, "Reset")
 
     def on_close(self):
         try:
             self.stream_enabled.set(False)
-            self._publish(0.0, 0.0, "Reset")
+            self._publish(0.0, 0.0, 0.0, "Reset")
         finally:
             self.root.destroy()
 
